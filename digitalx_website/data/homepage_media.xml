@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="dx_home_media_hero_colorvu" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_hero_bath_travel.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/lifestyle/bath-travel.jpg</field>
+        </record>
+        <record id="dx_home_media_hero_alarm" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_hero_ceramics.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/categories/ceramics.jpg</field>
+        </record>
+        <record id="dx_home_media_hero_display" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_hero_faucets.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/categories/faucets.jpg</field>
+        </record>
+        <record id="dx_home_media_hero_night_vision" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_hero_bathscreens.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/categories/bathscreens.jpg</field>
+        </record>
+
+        <record id="dx_home_media_partner_hikvision" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_brand_logo.webp</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/craikcomfort/logo.webp</field>
+        </record>
+        <record id="dx_home_media_partner_ezviz" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_banner_history.png</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/banners/history.png</field>
+        </record>
+        <record id="dx_home_media_partner_ruijie" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_banner_technologies.png</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/banners/technologies.png</field>
+        </record>
+        <record id="dx_home_media_partner_must" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_banner_catalogs.png</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/banners/catalogs.png</field>
+        </record>
+        <record id="dx_home_media_partner_lansan" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_catalog_cover_besco_kabiny_2026.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/catalog-covers/besco-kabiny-2026.jpg</field>
+        </record>
+        <record id="dx_home_media_partner_unicable" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_catalog_cover_cerabe_2025.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/catalog-covers/cerabe-2025.jpg</field>
+        </record>
+        <record id="dx_home_media_partner_hikvision_logo" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_brand_mark.webp</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/craikcomfort/logo.webp</field>
+        </record>
+
+        <record id="dx_home_media_category_cameras" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_category_washbasins.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/categories/ceramics.jpg</field>
+        </record>
+        <record id="dx_home_media_category_networking" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_category_faucets.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/categories/faucets.jpg</field>
+        </record>
+        <record id="dx_home_media_category_access" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_category_trays.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/categories/shower-trays.jpg</field>
+        </record>
+        <record id="dx_home_media_category_alarm" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_category_enclosures.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/categories/enclosures.jpg</field>
+        </record>
+        <record id="dx_home_media_category_intercom" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_category_bathtubs.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/categories/bathtubs.jpg</field>
+        </record>
+        <record id="dx_home_media_category_nvr" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_category_bathscreens.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/categories/bathscreens.jpg</field>
+        </record>
+        <record id="dx_home_media_category_accessories" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_category_statement_basin.png</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/banners/architect-zone.png</field>
+        </record>
+
+        <record id="dx_home_media_gallery_alarm" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_gallery_bath_travel.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/lifestyle/bath-travel.jpg</field>
+        </record>
+        <record id="dx_home_media_gallery_kit" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_gallery_showers.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/lifestyle/showers.jpg</field>
+        </record>
+        <record id="dx_home_media_gallery_switches" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">dx_home_media_gallery_architect_zone.png</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/banners/architect-zone.png</field>
+        </record>
+    </data>
+</odoo>

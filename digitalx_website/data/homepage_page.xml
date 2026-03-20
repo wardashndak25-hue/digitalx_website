@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="dx_homepage_page" model="website.page">
+            <field name="name">Craik &amp; Comfort Bathroom Design</field>
+            <field name="url">/</field>
+            <field name="view_id" ref="dx_homepage_content"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="website_indexed" eval="True"/>
+            <field name="is_published" eval="True"/>
+        </record>
+    </data>
+</odoo>

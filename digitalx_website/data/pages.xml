@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <template id="dx_about_content" name="DX About Page Content">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure">
+                    <style>
+                        .cc-about-hero {
+                            padding: 110px 0 88px;
+                            background:
+                                linear-gradient(180deg, rgba(33,37,41,0.76) 0%, rgba(33,37,41,0.54) 100%),
+                                url('/digitalx_website/static/src/img/besco/lifestyle/bath-travel.jpg') center/cover no-repeat;
+                            color: #fff;
+                        }
+                        .cc-page-shell { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+                        .cc-page-kicker {
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 8px;
+                            padding: 9px 16px;
+                            border-radius: 999px;
+                            background: rgba(192,57,43,0.14);
+                            color: #f1f2f4;
+                            font-size: 12px;
+                            font-weight: 800;
+                            letter-spacing: 0.14em;
+                            text-transform: uppercase;
+                        }
+                        .cc-page-kicker:before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--dx-primary); }
+                        .cc-page-title {
+                            margin: 18px 0 14px;
+                            max-width: 760px;
+                            font-family: var(--dx-font-head);
+                            font-size: clamp(2.4rem, 4vw, 4.8rem);
+                            line-height: 0.98;
+                            letter-spacing: -0.03em;
+                        }
+                        .cc-page-copy { max-width: 650px; margin: 0; color: rgba(255,255,255,0.8); font-size: 16px; line-height: 1.85; }
+                        .cc-about-section { padding: 92px 0; background: var(--dx-ivory-strong); }
+                        .cc-about-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 30px; align-items: center; }
+                        .cc-about-card {
+                            overflow: hidden;
+                            border-radius: 32px;
+                            background: linear-gradient(180deg, #fff 0%, var(--dx-ivory) 100%);
+                            border: 1px solid rgba(63,49,36,0.08);
+                            box-shadow: var(--dx-shadow);
+                        }
+                        .cc-about-card img { width: 100%; height: 100%; object-fit: cover; min-height: 520px; }
+                        .cc-about-body { padding: 38px; }
+                        .cc-about-body h2 {
+                            margin: 0 0 16px;
+                            font-family: var(--dx-font-head);
+                            font-size: 40px;
+                            line-height: 1.02;
+                            color: var(--dx-charcoal);
+                        }
+                        .cc-about-body p { margin: 0 0 14px; color: var(--dx-copy); font-size: 15px; line-height: 1.9; }
+                        .cc-about-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+                        .cc-about-value {
+                            padding: 24px 22px;
+                            border-radius: 24px;
+                            background: rgba(255,255,255,0.82);
+                            border: 1px solid rgba(63,49,36,0.08);
+                        }
+                        .cc-about-value h3 { margin: 0 0 8px; font-size: 18px; font-weight: 800; color: var(--dx-charcoal); }
+                        .cc-about-value p { margin: 0; font-size: 14px; line-height: 1.75; color: var(--dx-copy); }
+                        .cc-about-strip {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            gap: 20px;
+                            margin-top: 42px;
+                        }
+                        .cc-about-panel {
+                            padding: 26px;
+                            border-radius: 26px;
+                            background: #fff;
+                            border: 1px solid rgba(63,49,36,0.08);
+                            box-shadow: 0 20px 42px -36px rgba(23,17,12,0.25);
+                        }
+                        .cc-about-panel h3 { margin: 0 0 10px; font-size: 20px; font-weight: 800; color: var(--dx-charcoal); }
+                        .cc-about-panel p,
+                        .cc-about-panel a { margin: 0; color: var(--dx-copy); font-size: 15px; line-height: 1.8; text-decoration: none !important; }
+                        .cc-about-map {
+                            overflow: hidden;
+                            border-radius: 32px;
+                            margin-top: 24px;
+                            border: 1px solid rgba(63,49,36,0.08);
+                            box-shadow: var(--dx-shadow);
+                        }
+                        .cc-about-map iframe { display: block; width: 100%; height: 430px; border: 0; }
+                        @media (max-width: 991px) {
+                            .cc-about-grid,
+                            .cc-about-strip,
+                            .cc-about-values { grid-template-columns: 1fr; }
+                        }
+                        @media (max-width: 767px) {
+                            .cc-page-shell { padding: 0 18px; }
+                            .cc-about-hero { padding: 96px 0 72px; }
+                            .cc-about-section { padding: 72px 0; }
+                            .cc-about-body { padding: 28px; }
+                            .cc-about-card img { min-height: 360px; }
+                        }
+                    </style>
+
+                    <section class="cc-about-hero">
+                        <div class="cc-page-shell">
+                            <span class="cc-page-kicker">About Craik &amp; Comfort</span>
+                            <h1 class="cc-page-title">A bathroom brand shaped around calm materials, stronger layouts, and premium daily use.</h1>
+                            <p class="cc-page-copy">Craik &amp; Comfort combines contemporary bathroom products with a more considered retail experience. The focus is not only on what clients buy, but on how each basin, bath, tray, enclosure, and fitting works together as one complete room story.</p>
+                        </div>
+                    </section>
+
+                    <section class="cc-about-section">
+                        <div class="cc-page-shell">
+                            <div class="cc-about-grid">
+                                <div class="cc-about-body">
+                                    <h2>Built for projects that need more than a product list.</h2>
+                                    <p>Our direction is rooted in bathroom environments that feel composed, tactile, and easy to live with. We bring together modern silhouettes, warm finishes, clean detailing, and practical support so the client journey feels premium from discovery to decision.</p>
+                                    <p>Whether the requirement is a single statement basin, a coordinated brassware set, or a larger renovation package, the goal stays the same: offer pieces that elevate the room and a website experience that reflects that same level of care.</p>
+                                    <div class="cc-about-values">
+                                        <div class="cc-about-value">
+                                            <h3>Curated Design</h3>
+                                            <p>Collections are presented with a stronger visual point of view, not as disconnected inventory.</p>
+                                        </div>
+                                        <div class="cc-about-value">
+                                            <h3>Practical Luxury</h3>
+                                            <p>Premium looks are balanced with everyday function, maintenance, and installation reality.</p>
+                                        </div>
+                                        <div class="cc-about-value">
+                                            <h3>Project Support</h3>
+                                            <p>Homeowners, specifiers, and trade clients can move from inspiration to enquiry quickly.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cc-about-card">
+                                    <img src="/digitalx_website/static/src/img/besco/lifestyle/showers.jpg" alt="Craik and Comfort bathroom design"/>
+                                </div>
+                            </div>
+
+                            <div class="cc-about-strip">
+                                <div class="cc-about-panel">
+                                    <h3>Brand Focus</h3>
+                                    <p>Washbasins, faucets, shower trays, enclosures, bathtubs, and bath screens presented with a more editorial, showroom-led feel.</p>
+                                </div>
+                                <div class="cc-about-panel">
+                                    <h3>Contact</h3>
+                                    <p><a href="mailto:info@craikcomfort.ie">info@craikcomfort.ie</a><br/><a href="tel:+353879394509">+353 87 939 4509</a><br/>D15XC91, Ireland</p>
+                                </div>
+                            </div>
+
+                            <div class="cc-about-map">
+                                <iframe src="https://www.google.com/maps?q=D15XC91%2C%20Ireland&amp;z=14&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Craik and Comfort location"></iframe>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+
+        <record id="dx_about_page" model="website.page">
+            <field name="name">About Craik &amp; Comfort</field>
+            <field name="url">/about</field>
+            <field name="view_id" ref="dx_about_content"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="website_indexed" eval="True"/>
+            <field name="is_published" eval="True"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <template id="dx_extra_page_styles" name="DX Extra Page Styles" inherit_id="website.layout" priority="40">
+            <xpath expr="//head" position="inside">
+                <style>
+                    .cc-studio-hero {
+                        padding: 110px 0 90px;
+                        background:
+                            linear-gradient(180deg, rgba(33,37,41,0.78) 0%, rgba(33,37,41,0.52) 100%),
+                            url('/digitalx_website/static/src/img/besco/lifestyle/bath-travel.jpg') center/cover no-repeat;
+                        color: #fff;
+                    }
+                    .cc-page-shell { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+                    .cc-page-badge {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 8px;
+                        padding: 9px 16px;
+                        border-radius: 999px;
+                        background: rgba(192,57,43,0.14);
+                        color: #f1f2f4;
+                        font-size: 12px;
+                        font-weight: 800;
+                        letter-spacing: 0.14em;
+                        text-transform: uppercase;
+                    }
+                    .cc-page-badge:before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--dx-primary); }
+                    .cc-page-title {
+                        margin: 18px 0 14px;
+                        max-width: 760px;
+                        font-family: var(--dx-font-head);
+                        font-size: clamp(2.3rem, 4vw, 4.6rem);
+                        line-height: 0.98;
+                        letter-spacing: -0.03em;
+                    }
+                    .cc-page-copy { max-width: 660px; margin: 0; color: rgba(255,255,255,0.82); font-size: 16px; line-height: 1.85; }
+                    .cc-studio-section { padding: 92px 0; background: var(--dx-ivory-strong); }
+                    .cc-studio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
+                    .cc-studio-card {
+                        overflow: hidden;
+                        border-radius: 32px;
+                        background: linear-gradient(180deg, #fff 0%, var(--dx-ivory) 100%);
+                        border: 1px solid rgba(63,49,36,0.08);
+                        box-shadow: var(--dx-shadow);
+                    }
+                    .cc-studio-card img { width: 100%; height: 100%; min-height: 520px; object-fit: cover; }
+                    .cc-studio-body { padding: 36px; }
+                    .cc-studio-body h2,
+                    .cc-collections-head h2,
+                    .cc-care-head h2 {
+                        margin: 0 0 14px;
+                        font-family: var(--dx-font-head);
+                        font-size: 38px;
+                        line-height: 1.04;
+                        color: var(--dx-charcoal);
+                    }
+                    .cc-studio-body p,
+                    .cc-collections-head p,
+                    .cc-care-head p { margin: 0 0 14px; color: var(--dx-copy); font-size: 15px; line-height: 1.9; }
+                    .cc-studio-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+                    .cc-studio-metric,
+                    .cc-collection-card,
+                    .cc-care-card {
+                        padding: 24px;
+                        border-radius: 24px;
+                        background: rgba(255,255,255,0.84);
+                        border: 1px solid rgba(63,49,36,0.08);
+                    }
+                    .cc-studio-metric strong { display: block; margin-bottom: 8px; font-size: 30px; color: var(--dx-brass-deep); }
+                    .cc-studio-metric span { color: var(--dx-copy); font-size: 14px; line-height: 1.75; }
+                    .cc-collections-section,
+                    .cc-care-section { padding: 92px 0; background: var(--dx-ivory); }
+                    .cc-collections-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
+                    .cc-collection-card img { width: 100%; height: 230px; object-fit: cover; border-radius: 18px; margin-bottom: 18px; }
+                    .cc-collection-card h3,
+                    .cc-care-card h3 { margin: 0 0 8px; font-size: 20px; font-weight: 800; color: var(--dx-charcoal); }
+                    .cc-collection-card p,
+                    .cc-care-card p,
+                    .cc-care-card li { margin: 0; color: var(--dx-copy); font-size: 14px; line-height: 1.8; }
+                    .cc-care-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 34px; }
+                    .cc-care-card ul { margin: 10px 0 0; padding-left: 18px; }
+                    .cc-care-contact {
+                        margin-top: 26px;
+                        padding: 28px;
+                        border-radius: 28px;
+                        background: linear-gradient(120deg, var(--dx-charcoal) 0%, var(--dx-charcoal-soft) 65%, rgba(192,57,43,0.96) 160%);
+                        color: #fff;
+                    }
+                    .cc-care-contact h3 { margin: 0 0 10px; font-size: 28px; font-family: var(--dx-font-head); }
+                    .cc-care-contact p,
+                    .cc-care-contact a { margin: 0; color: rgba(255,255,255,0.82); font-size: 15px; line-height: 1.85; text-decoration: none !important; }
+                    @media (max-width: 991px) {
+                        .cc-studio-grid,
+                        .cc-studio-metrics,
+                        .cc-collections-grid,
+                        .cc-care-grid { grid-template-columns: 1fr; }
+                    }
+                    @media (max-width: 767px) {
+                        .cc-page-shell { padding: 0 18px; }
+                        .cc-studio-hero { padding: 96px 0 72px; }
+                        .cc-studio-section,
+                        .cc-collections-section,
+                        .cc-care-section { padding: 72px 0; }
+                        .cc-studio-body { padding: 28px; }
+                        .cc-studio-card img { min-height: 360px; }
+                    }
+                </style>
+            </xpath>
+        </template>
+
+        <template id="dx_company_content" name="DX Company Page" key="digitalx_website.dx_company_content">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure">
+                    <style>
+                        .cc-studio-hero {
+                            padding: 110px 0 90px;
+                            background:
+                                linear-gradient(180deg, rgba(33,37,41,0.78) 0%, rgba(33,37,41,0.52) 100%),
+                                url('/digitalx_website/static/src/img/besco/lifestyle/bath-travel.jpg') center/cover no-repeat;
+                            color: #fff;
+                        }
+                        .cc-page-shell { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+                        .cc-page-badge {
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 8px;
+                            padding: 9px 16px;
+                            border-radius: 999px;
+                            background: rgba(192,57,43,0.14);
+                            color: #f1f2f4;
+                            font-size: 12px;
+                            font-weight: 800;
+                            letter-spacing: 0.14em;
+                            text-transform: uppercase;
+                        }
+                        .cc-page-badge:before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--dx-primary); }
+                        .cc-page-title {
+                            margin: 18px 0 14px;
+                            max-width: 760px;
+                            font-family: var(--dx-font-head);
+                            font-size: clamp(2.3rem, 4vw, 4.6rem);
+                            line-height: 0.98;
+                            letter-spacing: -0.03em;
+                        }
+                        .cc-page-copy { max-width: 660px; margin: 0; color: rgba(255,255,255,0.82); font-size: 16px; line-height: 1.85; }
+                        .cc-studio-section { padding: 92px 0; background: var(--dx-ivory-strong); }
+                        .cc-studio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
+                        .cc-studio-card {
+                            overflow: hidden;
+                            border-radius: 32px;
+                            background: linear-gradient(180deg, #fff 0%, var(--dx-ivory) 100%);
+                            border: 1px solid rgba(63,49,36,0.08);
+                            box-shadow: var(--dx-shadow);
+                        }
+                        .cc-studio-card img { width: 100%; height: 100%; min-height: 520px; object-fit: cover; }
+                        .cc-studio-body { padding: 36px; }
+                        .cc-studio-body h2,
+                        .cc-collections-head h2,
+                        .cc-care-head h2 {
+                            margin: 0 0 14px;
+                            font-family: var(--dx-font-head);
+                            font-size: 38px;
+                            line-height: 1.04;
+                            color: var(--dx-charcoal);
+                        }
+                        .cc-studio-body p,
+                        .cc-collections-head p,
+                        .cc-care-head p { margin: 0 0 14px; color: var(--dx-copy); font-size: 15px; line-height: 1.9; }
+                        .cc-studio-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+                        .cc-studio-metric,
+                        .cc-collection-card,
+                        .cc-care-card {
+                            padding: 24px;
+                            border-radius: 24px;
+                            background: rgba(255,255,255,0.84);
+                            border: 1px solid rgba(63,49,36,0.08);
+                        }
+                        .cc-studio-metric strong { display: block; margin-bottom: 8px; font-size: 30px; color: var(--dx-brass-deep); }
+                        .cc-studio-metric span { color: var(--dx-copy); font-size: 14px; line-height: 1.75; }
+                        .cc-collections-section,
+                        .cc-care-section { padding: 92px 0; background: var(--dx-ivory); }
+                        .cc-collections-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
+                        .cc-collection-card img { width: 100%; height: 230px; object-fit: cover; border-radius: 18px; margin-bottom: 18px; }
+                        .cc-collection-card h3,
+                        .cc-care-card h3 { margin: 0 0 8px; font-size: 20px; font-weight: 800; color: var(--dx-charcoal); }
+                        .cc-collection-card p,
+                        .cc-care-card p,
+                        .cc-care-card li { margin: 0; color: var(--dx-copy); font-size: 14px; line-height: 1.8; }
+                        .cc-care-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 34px; }
+                        .cc-care-card ul { margin: 10px 0 0; padding-left: 18px; }
+                        .cc-care-contact {
+                            margin-top: 26px;
+                            padding: 28px;
+                            border-radius: 28px;
+                            background: linear-gradient(120deg, var(--dx-charcoal) 0%, var(--dx-charcoal-soft) 65%, rgba(192,57,43,0.96) 160%);
+                            color: #fff;
+                        }
+                        .cc-care-contact h3 { margin: 0 0 10px; font-size: 28px; font-family: var(--dx-font-head); }
+                        .cc-care-contact p,
+                        .cc-care-contact a { margin: 0; color: rgba(255,255,255,0.82); font-size: 15px; line-height: 1.85; text-decoration: none !important; }
+                        @media (max-width: 991px) {
+                            .cc-studio-grid,
+                            .cc-studio-metrics,
+                            .cc-collections-grid,
+                            .cc-care-grid { grid-template-columns: 1fr; }
+                        }
+                        @media (max-width: 767px) {
+                            .cc-page-shell { padding: 0 18px; }
+                            .cc-studio-hero { padding: 96px 0 72px; }
+                            .cc-studio-section,
+                            .cc-collections-section,
+                            .cc-care-section { padding: 72px 0; }
+                            .cc-studio-body { padding: 28px; }
+                            .cc-studio-card img { min-height: 360px; }
+                        }
+                    </style>
+
+                    <section class="cc-studio-hero">
+                        <div class="cc-page-shell">
+                            <span class="cc-page-badge">Showroom Experience</span>
+                            <h1 class="cc-page-title">A studio-led presentation for clients who want the room to feel resolved, not improvised.</h1>
+                            <p class="cc-page-copy">The Craik &amp; Comfort approach frames bathroom products through mood, scale, finish, and compatibility, helping shoppers move faster from inspiration to confident specification.</p>
+                        </div>
+                    </section>
+
+                    <section class="cc-studio-section">
+                        <div class="cc-page-shell">
+                            <div class="cc-studio-grid">
+                                <div class="cc-studio-body">
+                                    <h2>From product browsing to a more complete bathroom conversation.</h2>
+                                    <p>This page introduces the studio feel behind the website. Instead of relying on a generic eCommerce presentation, the new direction brings in more editorial hierarchy, stronger visual cues, and clearer pathways for homeowners and trade clients.</p>
+                                    <p>The result is a site that feels closer to a premium design destination while still supporting real shopping, enquiries, and day-to-day product discovery.</p>
+                                    <div class="cc-studio-metrics">
+                                        <div class="cc-studio-metric">
+                                            <strong>6</strong>
+                                            <span>Core product groups arranged to support easier project planning.</span>
+                                        </div>
+                                        <div class="cc-studio-metric">
+                                            <strong>1</strong>
+                                            <span>Consistent visual language built around charcoal, soft stone gray, and terracotta red.</span>
+                                        </div>
+                                        <div class="cc-studio-metric">
+                                            <strong>24h</strong>
+                                            <span>Fast-response enquiry positioning for consultation and support flows.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cc-studio-card">
+                                    <img src="/digitalx_website/static/src/img/besco/lifestyle/small-bathroom.jpg" alt="Craik and Comfort studio"/>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+
+        <record id="dx_company_page" model="website.page">
+            <field name="name">Showroom Experience</field>
+            <field name="url">/company</field>
+            <field name="view_id" ref="dx_company_content"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="website_indexed" eval="True"/>
+            <field name="is_published" eval="True"/>
+        </record>
+
+        <template id="dx_partners_content" name="DX Partners Page" key="digitalx_website.dx_partners_content">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure">
+                    <section class="cc-collections-section">
+                        <div class="cc-page-shell">
+                            <div class="cc-collections-head">
+                                <span class="cc-page-badge" style="color:#f1f2f4;background:rgba(192,57,43,0.14);">Collections</span>
+                                <h2>Collections arranged around mood, material, and bathroom use.</h2>
+                                <p>These collection groupings give the catalog more personality and make it easier to imagine coordinated rooms, not just individual pieces.</p>
+                            </div>
+                            <div class="cc-collections-grid">
+                                <div class="cc-collection-card">
+                                    <img src="/digitalx_website/static/src/img/besco/categories/ceramics.jpg" alt="Stone and marble mood"/>
+                                    <h3>Stone &amp; Marble Mood</h3>
+                                    <p>Quiet neutrals, warm veining, and architectural surfaces that anchor premium bathroom schemes.</p>
+                                </div>
+                                <div class="cc-collection-card">
+                                    <img src="/digitalx_website/static/src/img/besco/categories/faucets.jpg" alt="Brassware collection"/>
+                                    <h3>Brushed Brass Detail</h3>
+                                    <p>Metallic accents that bring warmth and contrast to white ceramics, glass, and natural textures.</p>
+                                </div>
+                                <div class="cc-collection-card">
+                                    <img src="/digitalx_website/static/src/img/besco/categories/enclosures.jpg" alt="Glass enclosure collection"/>
+                                    <h3>Minimal Glass Systems</h3>
+                                    <p>Enclosures and screens that keep the room visually open while improving function and finish.</p>
+                                </div>
+                                <div class="cc-collection-card">
+                                    <img src="/digitalx_website/static/src/img/besco/lifestyle/aspen.jpg" alt="Statement basin collection"/>
+                                    <h3>Statement Basins</h3>
+                                    <p>Sculptural forms and elevated countertop presence for stronger vanity compositions.</p>
+                                </div>
+                                <div class="cc-collection-card">
+                                    <img src="/digitalx_website/static/src/img/besco/categories/bathtubs.jpg" alt="Bath collection"/>
+                                    <h3>Contemporary Bathing</h3>
+                                    <p>Bath-led looks designed around comfort, clean lines, and a calmer end-of-day experience.</p>
+                                </div>
+                                <div class="cc-collection-card">
+                                    <img src="/digitalx_website/static/src/img/besco/categories/shower-trays.jpg" alt="Compact bathroom collection"/>
+                                    <h3>Compact Smart Layouts</h3>
+                                    <p>Selections for smaller footprints where proportion, practicality, and simplicity matter most.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+
+        <record id="dx_partners_page" model="website.page">
+            <field name="name">Collections</field>
+            <field name="url">/collections</field>
+            <field name="view_id" ref="dx_partners_content"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="website_indexed" eval="True"/>
+            <field name="is_published" eval="True"/>
+        </record>
+
+        <template id="dx_warranty_content" name="DX Warranty Page" key="digitalx_website.dx_warranty_content">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure">
+                    <section class="cc-care-section">
+                        <div class="cc-page-shell">
+                            <div class="cc-care-head">
+                                <span class="cc-page-badge" style="color:#f1f2f4;background:rgba(192,57,43,0.14);">Customer Care</span>
+                                <h2>Support that fits the premium position of the brand.</h2>
+                                <p>This page replaces the old warranty-only model with broader customer care guidance covering enquiries, product help, and after-sales communication.</p>
+                            </div>
+                            <div class="cc-care-grid">
+                                <div class="cc-care-card">
+                                    <h3>Before You Order</h3>
+                                    <p>Use the contact form or WhatsApp to confirm dimensions, finishes, category suitability, or cross-product coordination before placing larger orders.</p>
+                                </div>
+                                <div class="cc-care-card">
+                                    <h3>After-Sales Support</h3>
+                                    <p>Our communication flow is positioned around prompt follow-up, practical product guidance, and clearer routing for project or retail queries.</p>
+                                </div>
+                                <div class="cc-care-card">
+                                    <h3>Returns &amp; Care Notes</h3>
+                                    <ul>
+                                        <li>Inspect items promptly after delivery.</li>
+                                        <li>Keep packaging until installation planning is complete.</li>
+                                        <li>Share images and order details when reporting issues.</li>
+                                    </ul>
+                                </div>
+                                <div class="cc-care-card" id="payment-methods">
+                                    <h3>Payment Methods</h3>
+                                    <p>Available payment options are shown during checkout before order confirmation. For larger orders or project-based purchases, contact the team to confirm the preferred payment route in advance.</p>
+                                </div>
+                            </div>
+                            <div class="cc-care-contact">
+                                <h3>Need direct help?</h3>
+                                <p><a href="mailto:info@craikcomfort.ie">info@craikcomfort.ie</a><br/><a href="tel:+353879394509">+353 87 939 4509</a><br/><a href="https://wa.me/353879394509" target="_blank" rel="noopener noreferrer">WhatsApp Support</a><br/>D15XC91, Ireland</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+
+        <record id="dx_warranty_page" model="website.page">
+            <field name="name">Customer Care</field>
+            <field name="url">/customer-care</field>
+            <field name="view_id" ref="dx_warranty_content"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="website_indexed" eval="True"/>
+            <field name="is_published" eval="True"/>
+        </record>
+    </data>
+</odoo>

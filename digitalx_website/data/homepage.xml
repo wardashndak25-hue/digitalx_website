@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="dx_homepage_content" name="DX Homepage Content">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure">
+                    <style>
+                        .cc-home * { box-sizing: border-box; }
+                        .cc-home { background: var(--dx-ivory-strong); color: var(--dx-charcoal); overflow: clip; }
+                        .cc-section { position: relative; padding: 92px 0; }
+                        .cc-shell { position: relative; max-width: 1320px; margin: 0 auto; padding: 0 28px; }
+                        .cc-kicker {
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 8px;
+                            padding: 9px 16px;
+                            border-radius: 999px;
+                            background: rgba(192,57,43,0.12);
+                            color: var(--dx-primary-hover);
+                            font-size: 12px;
+                            font-weight: 800;
+                            letter-spacing: 0.14em;
+                            text-transform: uppercase;
+                        }
+                        .cc-kicker::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--dx-brass); }
+                        .cc-heading {
+                            margin: 18px 0 16px;
+                            font-family: var(--dx-font-head);
+                            font-size: clamp(2.2rem, 4vw, 4.4rem);
+                            line-height: 0.98;
+                            letter-spacing: -0.03em;
+                        }
+                        .cc-heading span { color: var(--dx-brass); }
+                        .cc-copy { margin: 0; max-width: 620px; color: var(--dx-copy); font-size: 16px; line-height: 1.8; }
+                        .cc-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+                        .cc-btn-primary,
+                        .cc-btn-secondary {
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            min-height: 52px;
+                            padding: 0 24px;
+                            border-radius: 999px;
+                            font-size: 14px;
+                            font-weight: 800;
+                            text-decoration: none !important;
+                        }
+                        .cc-btn-primary {
+                            background: linear-gradient(135deg, var(--dx-primary), var(--dx-primary-hover));
+                            color: #fff !important;
+                            box-shadow: 0 20px 34px -24px rgba(192,57,43,0.42);
+                        }
+                        .cc-btn-secondary {
+                            background: rgba(255,255,255,0.82);
+                            border: 1px solid rgba(255,255,255,0.3);
+                            color: #fff !important;
+                        }
+                        .cc-hero { position: relative; min-height: 86vh; background: var(--dx-charcoal); overflow: hidden; }
+                        .cc-hero-track { position: relative; min-height: 86vh; }
+                        .cc-hero-slide { position: absolute; inset: 0; min-height: 86vh; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.55s ease; }
+                        .cc-hero-slide.is-active { opacity: 1; visibility: visible; pointer-events: auto; }
+                        .cc-hero-slide img,
+                        .cc-hero-slide video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+                        .cc-hero-overlay {
+                            position: absolute;
+                            inset: 0;
+                            background:
+                                linear-gradient(90deg, rgba(33,37,41,0.84) 0%, rgba(33,37,41,0.56) 46%, rgba(33,37,41,0.24) 72%, rgba(33,37,41,0.16) 100%),
+                                linear-gradient(180deg, rgba(33,37,41,0.18) 0%, rgba(33,37,41,0.42) 100%);
+                        }
+                        .cc-hero-inner { position: relative; z-index: 3; display: flex; align-items: center; min-height: 86vh; padding: 148px 0 108px; }
+                        .cc-hero-copy { max-width: 640px; color: #fff; opacity: 0; transform: translateY(22px); transition: opacity 0.45s ease, transform 0.45s ease; }
+                        .cc-hero-slide.is-active .cc-hero-copy { opacity: 1; transform: translateY(0); }
+                        .cc-hero-copy .cc-copy { color: rgba(255,255,255,0.8); }
+                        .cc-hero-dots { position: absolute; inset-inline: 0; bottom: 38px; z-index: 4; display: flex; justify-content: center; gap: 10px; margin: 0; }
+                        .cc-hero-dot { width: 12px !important; height: 12px !important; padding: 0 !important; margin: 0 !important; border: 0 !important; border-radius: 50%; background: rgba(255,255,255,0.28) !important; opacity: 1 !important; }
+                        .cc-hero-dot.is-active { background: var(--dx-primary) !important; box-shadow: 0 0 0 5px rgba(192,57,43,0.18); }
+                        .cc-ribbon { margin-top: -48px; position: relative; z-index: 5; }
+                        .cc-ribbon-card {
+                            display: grid;
+                            grid-template-columns: repeat(5, 1fr);
+                            gap: 12px;
+                            padding: 18px;
+                            border-radius: 28px;
+                            background: rgba(255,255,255,0.94);
+                            border: 1px solid rgba(63,49,36,0.08);
+                            box-shadow: var(--dx-shadow);
+                        }
+                        .cc-ribbon-item {
+                            padding: 18px 16px;
+                            border-radius: 20px;
+                            background: linear-gradient(180deg, #fff 0%, var(--dx-ivory) 100%);
+                            text-align: center;
+                            font-size: 13px;
+                            font-weight: 800;
+                            color: var(--dx-charcoal);
+                        }
+                        .cc-ribbon-item span {
+                            display: block;
+                            margin-top: 6px;
+                            font-size: 11px;
+                            font-weight: 700;
+                            color: var(--dx-copy);
+                            letter-spacing: 0.08em;
+                            text-transform: uppercase;
+                        }
+                        .cc-grid-2 { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center; }
+                        .cc-categories { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 42px; }
+                        .cc-category-card {
+                            position: relative;
+                            min-height: 330px;
+                            overflow: hidden;
+                            border-radius: 28px;
+                            text-decoration: none !important;
+                            background: #221c16;
+                        }
+                        .cc-category-card img {
+                            position: absolute;
+                            inset: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            transition: transform 0.45s ease;
+                        }
+                        .cc-category-card:hover img { transform: scale(1.06); }
+                        .cc-category-card::after {
+                            content: '';
+                            position: absolute;
+                            inset: 0;
+                            background: linear-gradient(180deg, rgba(15,12,10,0.05) 0%, rgba(15,12,10,0.72) 100%);
+                        }
+                        .cc-category-body { position: absolute; inset-inline: 0; bottom: 0; z-index: 2; padding: 24px; color: #fff; }
+                        .cc-category-body h3 { margin: 0 0 6px; font-family: var(--dx-font-head); font-size: 28px; line-height: 1; }
+                        .cc-category-body p { margin: 0; color: rgba(255,255,255,0.74); font-size: 13px; line-height: 1.6; }
+                        .cc-editorial-card {
+                            position: relative;
+                            overflow: hidden;
+                            border-radius: 32px;
+                            background: linear-gradient(180deg, #fff 0%, #f3eadf 100%);
+                            border: 1px solid rgba(63,49,36,0.08);
+                            box-shadow: var(--dx-shadow);
+                        }
+                        .cc-editorial-image { min-height: 540px; }
+                        .cc-editorial-image img { width: 100%; height: 100%; object-fit: cover; }
+                        .cc-editorial-body { padding: 34px; }
+                        .cc-editorial-list { display: grid; gap: 14px; margin-top: 24px; }
+                        .cc-editorial-item { padding: 18px 18px 18px 20px; border-radius: 22px; background: rgba(255,255,255,0.75); border: 1px solid rgba(63,49,36,0.08); }
+                        .cc-editorial-item h4 { margin: 0 0 6px; font-size: 15px; font-weight: 800; }
+                        .cc-editorial-item p { margin: 0; color: var(--dx-copy); font-size: 13px; line-height: 1.7; }
+                        .cc-gallery { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 160px; gap: 16px; margin-top: 42px; }
+                        .cc-gallery-card { position: relative; overflow: hidden; border-radius: 26px; background: #221c16; }
+                        .cc-gallery-card img { width: 100%; height: 100%; object-fit: cover; }
+                        .cc-gallery-a { grid-column: span 5; grid-row: span 2; }
+                        .cc-gallery-b { grid-column: span 3; grid-row: span 1; }
+                        .cc-gallery-c { grid-column: span 4; grid-row: span 2; }
+                        .cc-gallery-d { grid-column: span 3; grid-row: span 1; }
+                        .cc-gallery-e { grid-column: span 5; grid-row: span 1; }
+                        .cc-gallery-f { grid-column: span 4; grid-row: span 1; }
+                        .cc-resources { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 34px; }
+                        .cc-resource-card {
+                            display: flex;
+                            flex-direction: column;
+                            overflow: hidden;
+                            border-radius: 28px;
+                            background: linear-gradient(180deg, #fff 0%, var(--dx-ivory) 100%);
+                            border: 1px solid rgba(33,37,41,0.08);
+                            box-shadow: 0 20px 42px -36px rgba(33,37,41,0.2);
+                        }
+                        .cc-resource-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #fff; }
+                        .cc-resource-body { display: grid; gap: 10px; padding: 22px 20px 20px; flex: 1; }
+                        .cc-resource-meta {
+                            color: rgba(73,80,87,0.82);
+                            font-size: 11px;
+                            font-weight: 800;
+                            letter-spacing: 0.14em;
+                            text-transform: uppercase;
+                        }
+                        .cc-resource-title {
+                            margin: 0;
+                            color: var(--dx-charcoal);
+                            font-size: 22px;
+                            font-weight: 800;
+                            line-height: 1.2;
+                            font-family: var(--dx-font-head);
+                        }
+                        .cc-resource-copy { margin: 0; color: var(--dx-copy); font-size: 14px; line-height: 1.8; }
+                        .cc-resource-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+                        .cc-resource-primary,
+                        .cc-resource-secondary {
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            min-height: 46px;
+                            padding: 0 18px;
+                            border-radius: 999px;
+                            font-size: 13px;
+                            font-weight: 800;
+                            text-decoration: none !important;
+                        }
+                        .cc-resource-primary {
+                            background: linear-gradient(135deg, var(--dx-primary), var(--dx-primary-hover));
+                            color: #fff !important;
+                        }
+                        .cc-resource-secondary {
+                            border: 1px solid rgba(33,37,41,0.12);
+                            background: rgba(255,255,255,0.9);
+                            color: var(--dx-charcoal) !important;
+                        }
+                        .cc-products-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 34px; }
+                        .cc-link { color: var(--dx-brass-deep) !important; font-size: 14px; font-weight: 800; text-decoration: none !important; }
+                        .cc-products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+                        .cc-product-card { display: flex; flex-direction: column; overflow: hidden; border-radius: 28px; background: linear-gradient(180deg, #fff 0%, var(--dx-ivory) 100%); border: 1px solid rgba(33,37,41,0.08); box-shadow: 0 20px 42px -36px rgba(33,37,41,0.2); }
+                        .cc-product-image { background: #fff; padding: 18px; }
+                        .cc-product-image img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; }
+                        .cc-product-body { display: grid; gap: 10px; padding: 22px 20px 18px; flex: 1; }
+                        .cc-product-cat { color: rgba(95,86,74,0.78); font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+                        .cc-product-name { margin: 0; min-height: 50px; color: var(--dx-charcoal); font-size: 16px; font-weight: 800; line-height: 1.5; }
+                        .cc-product-price { color: var(--dx-brass-deep); font-size: 24px; font-weight: 800; }
+                        .cc-product-actions { padding: 0 20px 20px; }
+                        .cc-product-actions button { width: 100%; min-height: 48px; border: 0; border-radius: 16px; background: linear-gradient(135deg, var(--dx-charcoal), var(--dx-charcoal-soft)); color: #fff; font-size: 14px; font-weight: 800; }
+                        .cc-benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 42px; }
+                        .cc-benefit { padding: 26px 24px; border-radius: 28px; background: linear-gradient(180deg, #fff 0%, #f5ecdf 100%); border: 1px solid rgba(63,49,36,0.08); }
+                        .cc-benefit h3 { margin: 0 0 8px; font-size: 18px; font-weight: 800; }
+                        .cc-benefit p { margin: 0; color: var(--dx-copy); font-size: 14px; line-height: 1.8; }
+                        .cc-cta { overflow: hidden; border-radius: 34px; background: linear-gradient(120deg, #17120f 0%, #2b221a 55%, #563b1f 100%); color: #fff; }
+                        .cc-cta-grid { display: grid; grid-template-columns: 1fr 0.95fr; gap: 28px; align-items: center; }
+                        .cc-cta-copy { padding: 60px 56px; }
+                        .cc-cta-copy .cc-copy { color: rgba(255,255,255,0.78); }
+                        .cc-cta-media { min-height: 420px; }
+                        .cc-cta-media img { width: 100%; height: 100%; object-fit: cover; }
+                        @media (max-width: 1199px) {
+                            .cc-ribbon-card { grid-template-columns: repeat(3, 1fr); }
+                            .cc-categories, .cc-products, .cc-benefits, .cc-resources { grid-template-columns: repeat(2, 1fr); }
+                            .cc-grid-2, .cc-cta-grid { grid-template-columns: 1fr; }
+                        }
+                        @media (max-width: 767px) {
+                            .cc-shell { padding: 0 18px; }
+                            .cc-section { padding: 70px 0; }
+                            .cc-hero, .cc-hero-track, .cc-hero-inner { min-height: 78vh; }
+                            .cc-hero-inner { padding: 132px 0 92px; }
+                            .cc-ribbon { margin-top: -30px; }
+                            .cc-ribbon-card, .cc-categories, .cc-products, .cc-benefits, .cc-resources { grid-template-columns: 1fr; }
+                            .cc-gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
+                            .cc-gallery-a, .cc-gallery-b, .cc-gallery-c, .cc-gallery-d, .cc-gallery-e, .cc-gallery-f { grid-column: span 1; grid-row: span 1; }
+                            .cc-products-head { flex-direction: column; align-items: flex-start; }
+                            .cc-cta-copy { padding: 42px 28px; }
+                            .cc-cta-media { min-height: 300px; }
+                        }
+                    </style>
+                    <main class="cc-home">
+                        <t t-set="website" t-value="request.website"/>
+                        <t t-set="featured_products" t-value="request.env['product.template'].sudo().search([('website_published', '=', True)], limit=8, order='create_date desc')"/>
+
+                        <section class="cc-hero" data-dx-hero-slider="true">
+                            <div class="cc-hero-track">
+                                <article class="cc-hero-slide is-active">
+                                    <video autoplay="" muted="" loop="" playsinline="" preload="metadata" poster="/digitalx_website/static/src/img/besco/categories/bathtubs.jpg" aria-label="Besco bathroom hero video">
+                                        <source src="https://besco.eu/modules/ps_imageslider/images/1da42ee9f875dbe330a93e139b63315ff4e09b00_30-poziom_comprs.mp4" type="video/mp4"/>
+                                    </video>
+                                    <div class="cc-hero-overlay"></div>
+                                    <div class="cc-shell">
+                                        <div class="cc-hero-inner">
+                                            <div class="cc-hero-copy">
+                                                <span class="cc-kicker">Bathroom Renovation Dublin</span>
+                                                <h1 class="cc-heading">Bathroom renovation and design for <span>Dublin homes.</span></h1>
+                                                <p class="cc-copy">Craik &amp; Comfort is now positioned around the full renovation journey: design guidance, bathroom supply, project coordination, and a clearer route from first consultation to final bathroom finish.</p>
+                                                <div class="cc-actions">
+                                                    <a href="/bathroom-renovation-dublin" class="cc-btn-primary">Explore Renovation Service</a>
+                                                    <a href="/request-quote" class="cc-btn-secondary">Request A Quote</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="cc-hero-slide">
+                                    <img src="/digitalx_website/static/src/img/besco/lifestyle/bath-travel.jpg" alt="Freestanding bath lifestyle"/>
+                                    <div class="cc-hero-overlay"></div>
+                                    <div class="cc-shell">
+                                        <div class="cc-hero-inner">
+                                            <div class="cc-hero-copy">
+                                                <span class="cc-kicker">Design - Supply - Finalise</span>
+                                                <h1 class="cc-heading">A clearer route from first layout to <span>final bathroom detail.</span></h1>
+                                                <p class="cc-copy">The website now speaks to homeowners who need more than products alone. It introduces design consultation, supply support, and project-focused planning in one connected journey.</p>
+                                                <div class="cc-actions">
+                                                    <a href="/bathroom-design-dublin" class="cc-btn-primary">Explore Design Service</a>
+                                                    <a href="/before-after-projects" class="cc-btn-secondary">View Projects</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="cc-hero-slide">
+                                    <img src="/digitalx_website/static/src/img/besco/categories/faucets.jpg" alt="Bathroom faucet collection"/>
+                                    <div class="cc-hero-overlay"></div>
+                                    <div class="cc-shell">
+                                        <div class="cc-hero-inner">
+                                            <div class="cc-hero-copy">
+                                                <span class="cc-kicker">Supply &amp; Project Support</span>
+                                                <h1 class="cc-heading">Products, Besco ranges, and <span>project coordination.</span></h1>
+                                                <p class="cc-copy">From bathtubs and enclosures to fittings and layout support, the supply journey is now aligned with renovation planning, installer communication, and quote-ready enquiries.</p>
+                                                <div class="cc-actions">
+                                                    <a href="/bathroom-supply-shop" class="cc-btn-primary">Browse Supply &amp; Shop</a>
+                                                    <a href="/besco-bathroom-products" class="cc-btn-secondary">Explore Besco</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="cc-hero-dots" aria-label="Hero navigation">
+                                <button class="cc-hero-dot is-active" type="button" data-dx-hero-dot="0" aria-label="Hero slide 1"/>
+                                <button class="cc-hero-dot" type="button" data-dx-hero-dot="1" aria-label="Hero slide 2"/>
+                                <button class="cc-hero-dot" type="button" data-dx-hero-dot="2" aria-label="Hero slide 3"/>
+                            </div>
+                        </section>
+                        <section class="cc-ribbon">
+                            <div class="cc-shell">
+                                <div class="cc-ribbon-card">
+                                    <div class="cc-ribbon-item">Renovation Dublin<span>SEO-led service page</span></div>
+                                    <div class="cc-ribbon-item">Design Support<span>Layouts and finish planning</span></div>
+                                    <div class="cc-ribbon-item">Supply Coordination<span>Products aligned with scope</span></div>
+                                    <div class="cc-ribbon-item">Project Proof<span>Before and after stories</span></div>
+                                    <div class="cc-ribbon-item">Quote Route<span>Consultation and enquiries</span></div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="cc-section">
+                            <div class="cc-shell">
+                                <span class="cc-kicker">Core Services</span>
+                                <h2 class="cc-heading">Design, supply, and finalise with <span>a clearer project plan.</span></h2>
+                                <p class="cc-copy">These are the high-priority pages now built to support Google visibility, trust, and stronger enquiries from Dublin and Ireland renovation customers.</p>
+                                <div class="cc-categories">
+                                    <a href="/bathroom-renovation-dublin" class="cc-category-card">
+                                        <img src="/digitalx_website/static/src/img/besco/categories/ceramics.jpg" alt="Bathroom renovation Dublin"/>
+                                        <div class="cc-category-body">
+                                            <h3>Renovation Dublin</h3>
+                                            <p>The main landing page for full bathroom renovation searches, consultation bookings, and pricing guidance.</p>
+                                        </div>
+                                    </a>
+                                    <a href="/bathroom-design-dublin" class="cc-category-card">
+                                        <img src="/digitalx_website/static/src/img/besco/categories/faucets.jpg" alt="Bathroom design service"/>
+                                        <div class="cc-category-body">
+                                            <h3>Design Service</h3>
+                                            <p>Layout planning, style direction, and product guidance before the wrong decisions are locked in.</p>
+                                        </div>
+                                    </a>
+                                    <a href="/bathroom-supply-shop" class="cc-category-card">
+                                        <img src="/digitalx_website/static/src/img/besco/categories/shower-trays.jpg" alt="Bathroom supply and shop"/>
+                                        <div class="cc-category-body">
+                                            <h3>Supply &amp; Shop</h3>
+                                            <p>Browse products with delivery, installer coordination, and project timing kept in view.</p>
+                                        </div>
+                                    </a>
+                                    <a href="/besco-bathroom-products" class="cc-category-card">
+                                        <img src="/digitalx_website/static/src/img/besco/categories/enclosures.jpg" alt="Besco bathroom products"/>
+                                        <div class="cc-category-body">
+                                            <h3>Besco Products</h3>
+                                            <p>Dedicated Besco discovery for bathtubs, shower solutions, inspiration, and catalog-led product searches.</p>
+                                        </div>
+                                    </a>
+                                    <a href="/bathroom-project-organisation" class="cc-category-card">
+                                        <img src="/digitalx_website/static/src/img/besco/categories/bathtubs.jpg" alt="Bathroom project organisation"/>
+                                        <div class="cc-category-body">
+                                            <h3>Project Organisation</h3>
+                                            <p>Support for homeowners who need help aligning products, installers, timings, and final decisions.</p>
+                                        </div>
+                                    </a>
+                                    <a href="/before-after-projects" class="cc-category-card">
+                                        <img src="/digitalx_website/static/src/img/besco/categories/bathscreens.jpg" alt="Before and after bathroom projects"/>
+                                        <div class="cc-category-body">
+                                            <h3>Before &amp; After</h3>
+                                            <p>Project stories designed to build trust with real scope, timelines, materials, and room transformation examples.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="cc-section" style="padding-top:0;">
+                            <div class="cc-shell">
+                                <div class="cc-grid-2">
+                                    <div>
+                                        <span class="cc-kicker">Project-Led Journey</span>
+                                        <h2 class="cc-heading">Design, supply, and finalise without <span>losing project clarity.</span></h2>
+                                        <p class="cc-copy">Irish renovation customers often start with Google, compare trust signals quickly, and want a practical path to quote or consultation. The content structure now reflects that behavior more directly.</p>
+                                        <div class="cc-editorial-list">
+                                            <div class="cc-editorial-item">
+                                                <h4>Design and layout first</h4>
+                                                <p>Room goals, measurements, and finish direction are clarified before the product list starts drifting.</p>
+                                            </div>
+                                            <div class="cc-editorial-item">
+                                                <h4>Supply matched to the scope</h4>
+                                                <p>Product selection is framed as part of the renovation journey, not as a disconnected shop-only experience.</p>
+                                            </div>
+                                            <div class="cc-editorial-item">
+                                                <h4>Finalise with fewer loose ends</h4>
+                                                <p>Project organisation and installer communication now have a visible place in the service offer.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cc-editorial-card">
+                                        <div class="cc-editorial-image">
+                                            <img src="/digitalx_website/static/src/img/besco/lifestyle/small-bathroom.jpg" alt="Bathroom editorial"/>
+                                        </div>
+                                        <div class="cc-editorial-body">
+                                            <span class="cc-kicker">Dublin &amp; Ireland</span>
+                                            <h3 style="margin:18px 0 12px;font-family:var(--dx-font-head);font-size:34px;line-height:1.02;">A service structure built to generate consultations and quote enquiries.</h3>
+                                            <p class="cc-copy" style="max-width:none;">The homepage now points visitors toward the renovation page, the design service, the project gallery, reviews, and the quote route instead of leaving the shop to carry the full conversion burden alone.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="cc-section" style="padding-top:0;">
+                            <div class="cc-shell">
+                                <span class="cc-kicker">Project Focus</span>
+                                <h2 class="cc-heading">Projects, room ideas, and <span>bathroom inspiration that supports trust.</span></h2>
+                                <div class="cc-gallery">
+                                    <div class="cc-gallery-card cc-gallery-a"><img src="/digitalx_website/static/src/img/besco/lifestyle/bath-travel.jpg" alt="Freestanding bath lifestyle"/></div>
+                                    <div class="cc-gallery-card cc-gallery-b"><img src="/digitalx_website/static/src/img/besco/banners/history.png" alt="Besco heritage graphic"/></div>
+                                    <div class="cc-gallery-card cc-gallery-c"><img src="/digitalx_website/static/src/img/besco/lifestyle/showers.jpg" alt="Shower detail"/></div>
+                                    <div class="cc-gallery-card cc-gallery-d"><img src="/digitalx_website/static/src/img/besco/lifestyle/aspen.jpg" alt="Bathroom moodboard"/></div>
+                                    <div class="cc-gallery-card cc-gallery-e"><img src="/digitalx_website/static/src/img/besco/banners/technologies.png" alt="Bathroom technologies banner"/></div>
+                                    <div class="cc-gallery-card cc-gallery-f"><img src="/digitalx_website/static/src/img/besco/banners/architect-zone.png" alt="Architect zone banner"/></div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="cc-section" style="padding-top:0;">
+                            <div class="cc-shell">
+                                <div class="cc-products-head">
+                                    <div>
+                                        <span class="cc-kicker">Lead Capture</span>
+                                        <h2 class="cc-heading" style="margin-bottom:8px;">The pages that move visitors from search <span>to enquiry.</span></h2>
+                                        <p class="cc-copy">These routes strengthen trust, make the offer clearer, and give visitors an obvious next step whether they are ready for a quote or still comparing options.</p>
+                                    </div>
+                                </div>
+                                <div class="cc-resources">
+                                    <article class="cc-resource-card">
+                                        <img src="/digitalx_website/static/src/img/besco/lifestyle/zarya.jpg" alt="Request a quote"/>
+                                        <div class="cc-resource-body">
+                                            <span class="cc-resource-meta">Lead Form</span>
+                                            <h3 class="cc-resource-title">Request a Quote</h3>
+                                            <p class="cc-resource-copy">Give renovation, design, supply, and project organisation enquiries a dedicated place to convert.</p>
+                                            <div class="cc-resource-actions">
+                                                <a href="/request-quote" class="cc-resource-primary">Open Quote Form</a>
+                                                <a href="/contactus" class="cc-resource-secondary">Book Consultation</a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="cc-resource-card">
+                                        <img src="/digitalx_website/static/src/img/besco/lifestyle/showers.jpg" alt="Customer reviews"/>
+                                        <div class="cc-resource-body">
+                                            <span class="cc-resource-meta">Trust Signals</span>
+                                            <h3 class="cc-resource-title">Customer Reviews</h3>
+                                            <p class="cc-resource-copy">Show Google, Facebook, and verified client feedback in one place for Irish renovation visitors.</p>
+                                            <div class="cc-resource-actions">
+                                                <a href="/customer-reviews" class="cc-resource-primary">View Reviews</a>
+                                                <a href="/bathroom-renovation-dublin" class="cc-resource-secondary">Renovation Page</a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="cc-resource-card">
+                                        <img src="/digitalx_website/static/src/img/besco/lifestyle/aspen.jpg" alt="Before and after projects"/>
+                                        <div class="cc-resource-body">
+                                            <span class="cc-resource-meta">Project Showcase</span>
+                                            <h3 class="cc-resource-title">Before &amp; After Projects</h3>
+                                            <p class="cc-resource-copy">Use real project stories, budget ranges, materials, and timelines to build credibility and raise enquiry intent.</p>
+                                            <div class="cc-resource-actions">
+                                                <a href="/before-after-projects" class="cc-resource-primary">View Projects</a>
+                                                <a href="/bathroom-project-organisation" class="cc-resource-secondary">Project Support</a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="cc-section" style="padding-top:0;">
+                            <div class="cc-shell">
+                                <div class="cc-products-head">
+                                    <div>
+                                        <span class="cc-kicker">Supply &amp; Shop</span>
+                                        <h2 class="cc-heading" style="margin-bottom:8px;">Popular products that support <span>renovation-ready supply.</span></h2>
+                                        <p class="cc-copy">A live selection from the current published catalog, now positioned as part of the broader supply and project journey.</p>
+                                    </div>
+                                    <a href="/bathroom-supply-shop" class="cc-link">Explore Supply &amp; Shop</a>
+                                </div>
+                                <div class="cc-products">
+                                    <t t-if="featured_products">
+                                        <t t-foreach="featured_products" t-as="product">
+                                            <div class="cc-product-card">
+                                                <div class="cc-product-image">
+                                                    <img t-att-src="'/web/image/product.template/%s/image_512' % product.id" t-att-alt="product.name"/>
+                                                </div>
+                                                <div class="cc-product-body">
+                                                    <span class="cc-product-cat" t-esc="product.categ_id.name or 'Bathroom Supply'"/>
+                                                    <h3 class="cc-product-name" t-esc="product.name"/>
+                                                    <div class="cc-product-price">
+                                                        <span t-field="product.list_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                    </div>
+                                                </div>
+                                                <div class="cc-product-actions">
+                                                    <a t-att-href="product.website_url or '/shop'" style="display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:48px;border-radius:16px;background:linear-gradient(135deg,var(--dx-charcoal),var(--dx-charcoal-soft));color:#fff;font-size:14px;font-weight:800;text-decoration:none !important;">View Product</a>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                        <div class="cc-product-card">
+                                            <div class="cc-product-image"><img src="/digitalx_website/static/src/img/besco/categories/ceramics.jpg" alt="Curated bathroom selection"/></div>
+                                            <div class="cc-product-body">
+                                                <span class="cc-product-cat">Curated Selection</span>
+                                                <h3 class="cc-product-name">Publish your imported products to populate this section automatically.</h3>
+                                                <div class="cc-product-price">Live catalog ready</div>
+                                            </div>
+                                            <div class="cc-product-actions">
+                                                <a href="/shop" style="display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:48px;border-radius:16px;background:linear-gradient(135deg,var(--dx-charcoal),var(--dx-charcoal-soft));color:#fff;font-size:14px;font-weight:800;text-decoration:none !important;">Open Shop</a>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="cc-section" style="padding-top:0;">
+                            <div class="cc-shell">
+                                <span class="cc-kicker">Why This Structure Works</span>
+                                <h2 class="cc-heading">Built for Google visibility, trust, and <span>higher-quality enquiries.</span></h2>
+                                <div class="cc-benefits">
+                                    <div class="cc-benefit">
+                                        <h3>Dublin Search Relevance</h3>
+                                        <p>Dedicated renovation and design landing pages give the website stronger alignment with Dublin bathroom search intent.</p>
+                                    </div>
+                                    <div class="cc-benefit">
+                                        <h3>Clear Service Journey</h3>
+                                        <p>Visitors can now understand the offer as Design, Supply, and Finalise instead of trying to infer it from product pages alone.</p>
+                                    </div>
+                                    <div class="cc-benefit">
+                                        <h3>Project Trust Signals</h3>
+                                        <p>Projects and reviews have a direct place in the navigation and homepage instead of being hidden or missing.</p>
+                                    </div>
+                                    <div class="cc-benefit">
+                                        <h3>Stronger Lead Capture</h3>
+                                        <p>Request a Quote, consultation prompts, WhatsApp, and contact details are now part of the path to conversion.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="cc-section" style="padding-top:0;">
+                            <div class="cc-shell">
+                                <div class="cc-cta">
+                                    <div class="cc-cta-grid">
+                                        <div class="cc-cta-copy">
+                                            <span class="cc-kicker" style="background:rgba(192,57,43,0.16);color:#f1f2f4;">Consultation &amp; Quote</span>
+                                            <h2 class="cc-heading" style="color:#fff;margin-bottom:14px;">Planning a bathroom renovation in Dublin or sourcing products for a live project?</h2>
+                                            <p class="cc-copy">Start with a consultation if you need design direction, or use the quote route if you are ready to discuss renovation scope, supply, timeline, or project coordination.</p>
+                                            <div class="cc-actions">
+                                                <a href="/contactus" class="cc-btn-primary">Book A Consultation</a>
+                                                <a href="/request-quote" class="cc-btn-secondary">Request A Quote</a>
+                                            </div>
+                                        </div>
+                                        <div class="cc-cta-media">
+                                            <img src="/digitalx_website/static/src/img/besco/lifestyle/zarya.jpg" alt="Craik and Comfort consultation"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            </t>
+        </template>
+
+        <template id="dx_homepage_template" name="DX Homepage">
+            <t t-call="digitalx_website.dx_homepage_content"/>
+        </template>
+    </data>
+</odoo>

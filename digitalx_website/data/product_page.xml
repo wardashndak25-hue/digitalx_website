@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="dx_product_page" inherit_id="website_sale.product" name="DX Product Page">
+            <xpath expr="//section[@id='product_detail']" position="before">
+                <t t-set="dx_public_categories" t-value="product.public_categ_ids.sorted('sequence')"/>
+                <t t-set="dx_primary_public_category" t-value="category or (dx_public_categories and dx_public_categories[0]) or False"/>
+                <t t-set="dx_previous_product"
+                   t-value="request.env['product.template'].sudo().search([('id', '&lt;', product.id), ('sale_ok', '=', True), ('website_published', '=', True), ('website_id', 'in', [False, website.id])], order='id desc', limit=1)"/>
+                <t t-set="dx_next_product"
+                   t-value="request.env['product.template'].sudo().search([('id', '&gt;', product.id), ('sale_ok', '=', True), ('website_published', '=', True), ('website_id', 'in', [False, website.id])], order='id asc', limit=1)"/>
+
+                <div class="dx-product-pathbar">
+                    <div class="container dx-product-pathbar-inner">
+                        <a href="/shop" class="dx-product-path-link">All Products</a>
+                        <t t-if="dx_primary_public_category">
+                            <t t-foreach="dx_primary_public_category.parents_and_self" t-as="path_category">
+                                <span class="dx-product-path-separator">/</span>
+                                <t t-if="not path_category_last">
+                                    <a t-att-href="'/shop/category/%s' % slug(path_category)"
+                                       class="dx-product-path-link">
+                                        <t t-esc="path_category.name"/>
+                                    </a>
+                                </t>
+                                <t t-if="path_category_last">
+                                    <span class="dx-product-path-current">
+                                        <t t-esc="path_category.name"/>
+                                    </span>
+                                </t>
+                            </t>
+                        </t>
+                        <t t-if="not dx_primary_public_category">
+                            <span class="dx-product-path-separator">/</span>
+                            <span class="dx-product-path-current" t-esc="product.name"/>
+                        </t>
+                    </div>
+                </div>
+
+                <a t-if="dx_previous_product"
+                   t-att-href="dx_previous_product.website_url"
+                   class="dx-product-nav dx-product-nav-prev d-none d-xl-inline-flex">
+                    <span class="dx-product-nav-label">Previous</span>
+                </a>
+                <a t-if="dx_next_product"
+                   t-att-href="dx_next_product.website_url"
+                   class="dx-product-nav dx-product-nav-next d-none d-xl-inline-flex">
+                    <span class="dx-product-nav-label">Next</span>
+                </a>
+            </xpath>
+
+            <xpath expr="//section[@id='product_detail']/div[hasclass('o_wsale_content_contained')][hasclass('container')][hasclass('d-flex')][hasclass('flex-wrap')][hasclass('align-items-center')]" position="replace">
+                <t t-if="False"/>
+            </xpath>
+
+            <xpath expr="//section[@id='product_detail']" position="attributes">
+                <attribute name="class" separator=" " add="dx-product-shell"/>
+                <attribute name="data-dx-product-page">1</attribute>
+            </xpath>
+
+            <xpath expr="//div[@id='product_detail_main']" position="attributes">
+                <attribute name="class" separator=" " add="dx-product-main g-4 g-xxl-5 align-items-start"/>
+            </xpath>
+
+            <xpath expr="//div[@id='product_details']" position="attributes">
+                <attribute name="class" separator=" " add="dx-product-details-card"/>
+            </xpath>
+
+            <xpath expr="//div[@id='o_wsale_product_details_content']" position="attributes">
+                <attribute name="class" separator=" " add="dx-product-purchase"/>
+            </xpath>
+
+            <xpath expr="//div[hasclass('o_wsale_product_details_content_section_price')]" position="attributes">
+                <attribute name="class" separator=" " add="dx-product-price-block"/>
+            </xpath>
+
+            <xpath expr="//div[hasclass('o_wsale_product_details_content_section')][hasclass('o_wsale_product_details_content_section_cta')]" position="after">
+                <t t-set="dx_product_reference" t-value="(product_variant and product_variant.default_code) or product.default_code"/>
+                <t t-set="dx_product_documents" t-value="product.sudo().product_document_ids.filtered(lambda doc: doc.shown_on_product_page)"/>
+                <t t-set="dx_primary_document" t-value="dx_product_documents[:1]"/>
+                <div t-if="dx_product_reference or dx_primary_public_category or product.x_website_brand_name or product.x_website_brand_logo or product.x_website_support_text or dx_primary_document or product.x_website_manual_url or product.x_website_warranty_text"
+                     class="dx-product-summary">
+                    <div class="dx-product-info-list">
+                        <div t-if="dx_product_reference" class="dx-product-info-item">
+                            <span class="dx-product-info-label">Product Reference</span>
+                            <span class="dx-product-info-value" t-esc="dx_product_reference"/>
+                        </div>
+                        <div t-if="dx_primary_public_category" class="dx-product-info-item">
+                            <span class="dx-product-info-label">Categories</span>
+                            <span class="dx-product-info-value">
+                                <t t-foreach="dx_primary_public_category.parents_and_self" t-as="path_category">
+                                    <a t-att-href="'/shop/category/%s' % slug(path_category)" class="dx-product-inline-link">
+                                        <t t-esc="path_category.name"/>
+                                    </a>
+                                    <t t-if="not path_category_last"> / </t>
+                                </t>
+                            </span>
+                        </div>
+                        <div t-if="product.x_website_brand_name or product.x_website_brand_logo" class="dx-product-info-item dx-product-info-brand">
+                            <span class="dx-product-info-label">Brand</span>
+                            <span class="dx-product-info-value dx-product-brand-value">
+                                <img t-if="product.x_website_brand_logo"
+                                     t-att-src="'/web/image/product.template/%s/x_website_brand_logo' % product.id"
+                                     t-att-alt="product.x_website_brand_name or product.name"
+                                     class="dx-product-brand-logo"/>
+                                <span t-if="product.x_website_brand_name" t-field="product.x_website_brand_name"/>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div t-if="product.x_website_support_text or dx_primary_document or product.x_website_manual_url or product.x_website_warranty_text"
+                         class="dx-product-support-grid">
+                        <div t-if="product.x_website_support_text" class="dx-product-support-item">
+                            <span class="dx-product-support-icon"><i class="fa fa-life-ring" aria-hidden="true"/></span>
+                            <span class="dx-product-support-copy">
+                                <span class="dx-product-support-label">Support</span>
+                                <span class="dx-product-support-text" t-field="product.x_website_support_text"/>
+                            </span>
+                        </div>
+                        <a t-if="dx_primary_document or product.x_website_manual_url"
+                           t-att-href="dx_primary_document and ('/shop/' + slug(product) + '/document/' + str(dx_primary_document.id)) or product.x_website_manual_url"
+                           class="dx-product-support-item dx-product-support-link"
+                           t-att-target="dx_primary_document and ((dx_primary_document.ir_attachment_id.type == 'url' and '_blank') or '_self') or '_blank'"
+                           rel="noopener">
+                            <span class="dx-product-support-icon"><i class="fa fa-file-pdf-o" aria-hidden="true"/></span>
+                            <span class="dx-product-support-copy">
+                                <span class="dx-product-support-label">Documentation</span>
+                                <span class="dx-product-support-text">
+                                    <t t-if="dx_primary_document" t-esc="dx_primary_document.name"/>
+                                    <t t-if="not dx_primary_document" t-esc="product.x_website_manual_label or 'Product Manual'"/>
+                                </span>
+                            </span>
+                        </a>
+                        <div t-if="product.x_website_warranty_text" class="dx-product-support-item">
+                            <span class="dx-product-support-icon"><i class="fa fa-certificate" aria-hidden="true"/></span>
+                            <span class="dx-product-support-copy">
+                                <span class="dx-product-support-label">Warranty Coverage</span>
+                                <span class="dx-product-support-text" t-field="product.x_website_warranty_text"/>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+
+            <xpath expr="//div[@id='product_full_description']" position="replace">
+                <t t-set="dx_review_count" t-value="product.rating_count or 0"/>
+                <section class="container dx-product-tabs-shell">
+                    <div class="dx-product-tabs-card">
+                        <ul class="nav dx-product-tabs-nav" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button id="dx-product-description-tab"
+                                        class="nav-link active"
+                                        type="button"
+                                        role="tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#dx-product-description-pane"
+                                        aria-controls="dx-product-description-pane"
+                                        aria-selected="true">
+                                    Description
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button id="dx-product-reviews-tab"
+                                        class="nav-link"
+                                        type="button"
+                                        role="tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#dx-product-reviews-pane"
+                                        aria-controls="dx-product-reviews-pane"
+                                        aria-selected="false">
+                                    <span>Reviews</span>
+                                    <span class="dx-product-tab-count">(<t t-esc="dx_review_count"/>)</span>
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="tab-content dx-product-tabs-content">
+                            <div id="dx-product-description-pane"
+                                 class="tab-pane fade show active"
+                                 role="tabpanel"
+                                 aria-labelledby="dx-product-description-tab">
+                                <div itemprop="description"
+                                     t-field="product.website_description"
+                                     class="oe_structure oe_empty dx-product-tab-pane"/>
+                            </div>
+                            <div id="dx-product-reviews-pane"
+                                 class="tab-pane fade"
+                                 role="tabpanel"
+                                 aria-labelledby="dx-product-reviews-tab">
+                                <div id="o_product_page_reviews" class="dx-product-reviews-pane">
+                                    <div class="dx-product-review-summary">
+                                        <div class="dx-product-review-score">
+                                            <span class="dx-product-review-value" t-esc="'%.1f' % (product.sudo().rating_avg or 0.0)"/>
+                                            <span class="dx-product-review-meta">
+                                                Based on <t t-esc="dx_review_count"/> review<t t-if="dx_review_count != 1">s</t>
+                                            </span>
+                                        </div>
+                                        <p t-if="dx_review_count" class="dx-product-review-copy">
+                                            Customer feedback is available through the storefront rating tools and will continue to appear here as reviews are published.
+                                        </p>
+                                        <p t-if="not dx_review_count" class="dx-product-review-copy">
+                                            No customer reviews have been published for this product yet.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </xpath>
+        </template>
+
+        <template id="dx_product_title" inherit_id="website_sale.product_title" name="DX Product Title">
+            <xpath expr="//a[hasclass('o_product_page_reviews_link')]" position="replace">
+                <t t-if="False"/>
+            </xpath>
+
+            <xpath expr="//h1[@t-field='product.name']" position="after">
+                <p t-if="product.x_website_subtitle" class="dx-product-subtitle" t-field="product.x_website_subtitle"/>
+            </xpath>
+
+            <xpath expr="//div[@t-field='product.description_ecommerce']" position="attributes">
+                <attribute name="class" separator=" " add="dx-product-short-description"/>
+            </xpath>
+
+            <xpath expr="//p[hasclass('alert')]" position="attributes">
+                <attribute name="class" separator=" " add="dx-product-alert"/>
+            </xpath>
+        </template>
+
+        <template id="dx_product_accordion" inherit_id="website_sale.product_accordion" name="DX Product Accordion">
+            <xpath expr="//div[@id='product_accordion']" position="attributes">
+                <attribute name="class" separator=" " add="dx-product-accordion"/>
+            </xpath>
+        </template>
+
+        <template id="dx_product_cta_wrapper" inherit_id="website_sale.cta_wrapper" name="DX Product CTA Wrapper">
+            <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="attributes">
+                <attribute name="class" separator=" " add="dx-product-cta"/>
+            </xpath>
+
+            <xpath expr="//div[@id='product_option_block']" position="attributes">
+                <attribute name="class" separator=" " add="dx-product-option-block"/>
+            </xpath>
+        </template>
+
+        <template id="dx_product_stock_messages" inherit_id="website_sale_stock.website_sale_stock_product" name="DX Product Stock Messages">
+            <xpath expr="//div[hasclass('availability_messages')][hasclass('o_not_editable')]" position="attributes">
+                <attribute name="class" separator=" " add="dx-product-stock-block"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

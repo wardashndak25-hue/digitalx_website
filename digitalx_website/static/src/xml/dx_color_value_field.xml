@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="digitalx_website.DxColorValueField">
+        <t t-if="props.readonly">
+            <div class="dx_color_value_readonly d-inline-flex align-items-center gap-2">
+                <span class="dx_color_value_preview" t-att-style="'background:%s;' % previewValue"/>
+                <span t-esc="textValue or '-'"/>
+            </div>
+        </t>
+        <t t-else="">
+            <div class="dx_color_value_field d-flex align-items-center gap-2 flex-wrap">
+                <span class="dx_color_value_preview" t-att-style="'background:%s;' % previewValue"/>
+                <input
+                    class="form-control form-control-color dx_color_value_picker"
+                    type="color"
+                    t-att-value="pickerValue"
+                    t-att-title="pickerTitle"
+                    t-on-input="onColorInput"
+                />
+                <input
+                    class="o_input flex-grow-1"
+                    t-att-id="props.id"
+                    type="text"
+                    t-att-placeholder="placeholder"
+                    t-ref="input"
+                />
+            </div>
+        </t>
+    </t>
+
+</templates>

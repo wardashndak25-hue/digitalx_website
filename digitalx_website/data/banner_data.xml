@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="dx_home_banner_colorvu" model="x_digitalx_home_banner">
+            <field name="x_name">Craik Marble Hero</field>
+            <field name="x_sequence">10</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_badge">Curated Bathroom Design</field>
+            <field name="x_badge_color">#C9A76A</field>
+            <field name="x_badge_font_size">13</field>
+            <field name="x_title">Luxury Bathroom</field>
+            <field name="x_title_color">#FFFFFF</field>
+            <field name="x_title_font_size">58</field>
+            <field name="x_title_accent">Collections for Irish Homes</field>
+            <field name="x_title_accent_color">#E6C690</field>
+            <field name="x_title_accent_font_size">58</field>
+            <field name="x_description">Discover washbasins, bathtubs, screens, trays, and fittings selected to deliver a calm, premium, and highly functional bathroom experience.</field>
+            <field name="x_description_color">rgba(255,255,255,0.82)</field>
+            <field name="x_description_font_size">18</field>
+            <field name="x_primary_label">Shop the Collections</field>
+            <field name="x_primary_url">/shop</field>
+            <field name="x_secondary_label">Visit the Studio</field>
+            <field name="x_secondary_url">/company</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/besco/lifestyle/bath-travel.jpg"/>
+        </record>
+
+        <record id="dx_home_banner_alarm" model="x_digitalx_home_banner">
+            <field name="x_name">Signature Faucets</field>
+            <field name="x_sequence">20</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_badge">Signature Finishes</field>
+            <field name="x_badge_color">#C9A76A</field>
+            <field name="x_badge_font_size">13</field>
+            <field name="x_title">Brushed Gold,</field>
+            <field name="x_title_color">#FFFFFF</field>
+            <field name="x_title_font_size">58</field>
+            <field name="x_title_accent">Matte Black, Clean Lines</field>
+            <field name="x_title_accent_color">#E6C690</field>
+            <field name="x_title_accent_font_size">58</field>
+            <field name="x_description">Elevate every vanity and bath zone with refined fittings that turn functional touchpoints into design statements.</field>
+            <field name="x_description_color">rgba(255,255,255,0.82)</field>
+            <field name="x_description_font_size">18</field>
+            <field name="x_primary_label">Explore Faucets</field>
+            <field name="x_primary_url">/shop?search=Faucets</field>
+            <field name="x_secondary_label">See Collections</field>
+            <field name="x_secondary_url">/collections</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/besco/categories/faucets.jpg"/>
+        </record>
+
+        <record id="dx_home_banner_display" model="x_digitalx_home_banner">
+            <field name="x_name">Bath Screens Focus</field>
+            <field name="x_sequence">30</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_badge">Modern Showering</field>
+            <field name="x_badge_color">#C9A76A</field>
+            <field name="x_badge_font_size">13</field>
+            <field name="x_title">Walk-In Screens</field>
+            <field name="x_title_color">#FFFFFF</field>
+            <field name="x_title_font_size">58</field>
+            <field name="x_title_accent">with Architectural Detail</field>
+            <field name="x_title_accent_color">#E6C690</field>
+            <field name="x_title_accent_font_size">58</field>
+            <field name="x_description">Framed and minimal bath screens designed to open the room visually while keeping the everyday ritual effortless.</field>
+            <field name="x_description_color">rgba(255,255,255,0.82)</field>
+            <field name="x_description_font_size">18</field>
+            <field name="x_primary_label">Browse Bath Screens</field>
+            <field name="x_primary_url">/shop?search=Bathtub+Screens</field>
+            <field name="x_secondary_label">Get Advice</field>
+            <field name="x_secondary_url">/contactus</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/besco/categories/bathscreens.jpg"/>
+        </record>
+
+        <record id="dx_home_banner_night_vision" model="x_digitalx_home_banner">
+            <field name="x_name">Statement Basin Hero</field>
+            <field name="x_sequence">40</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_badge">Design-Led Selection</field>
+            <field name="x_badge_color">#C9A76A</field>
+            <field name="x_badge_font_size">13</field>
+            <field name="x_title">Craft a More</field>
+            <field name="x_title_color">#FFFFFF</field>
+            <field name="x_title_font_size">58</field>
+            <field name="x_title_accent">Expressive Bathroom</field>
+            <field name="x_title_accent_color">#E6C690</field>
+            <field name="x_title_accent_font_size">58</field>
+            <field name="x_description">From statement basins to refined trays and enclosures, Craik &amp; Comfort helps you shape a bathroom that feels elevated from every angle.</field>
+            <field name="x_description_color">rgba(255,255,255,0.82)</field>
+            <field name="x_description_font_size">18</field>
+            <field name="x_primary_label">View Washbasins</field>
+            <field name="x_primary_url">/shop?search=Washbasins</field>
+            <field name="x_secondary_label">Talk to the Team</field>
+            <field name="x_secondary_url">/contactus</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/besco/categories/ceramics.jpg"/>
+        </record>
+    </data>
+</odoo>

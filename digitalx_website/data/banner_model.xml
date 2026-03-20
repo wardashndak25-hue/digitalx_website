@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="model_x_digitalx_home_banner" model="ir.model">
+            <field name="model">x_digitalx_home_banner</field>
+            <field name="name">Homepage Banner</field>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_name" model="ir.model.fields">
+            <field name="name">x_name</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Name</field>
+            <field name="required" eval="True"/>
+            <field name="translate" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_sequence" model="ir.model.fields">
+            <field name="name">x_sequence</field>
+            <field name="ttype">integer</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Sequence</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_active" model="ir.model.fields">
+            <field name="name">x_active</field>
+            <field name="ttype">boolean</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Active</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_image" model="ir.model.fields">
+            <field name="name">x_image</field>
+            <field name="ttype">binary</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Banner Image</field>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_badge" model="ir.model.fields">
+            <field name="name">x_badge</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Badge</field>
+            <field name="translate" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_badge_color" model="ir.model.fields">
+            <field name="name">x_badge_color</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Badge Color</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_badge_font_size" model="ir.model.fields">
+            <field name="name">x_badge_font_size</field>
+            <field name="ttype">integer</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Badge Font Size</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_title" model="ir.model.fields">
+            <field name="name">x_title</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Title</field>
+            <field name="translate" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_title_color" model="ir.model.fields">
+            <field name="name">x_title_color</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Title Color</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_title_font_size" model="ir.model.fields">
+            <field name="name">x_title_font_size</field>
+            <field name="ttype">integer</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Title Font Size</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_title_accent" model="ir.model.fields">
+            <field name="name">x_title_accent</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Accent Title</field>
+            <field name="translate" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_title_accent_color" model="ir.model.fields">
+            <field name="name">x_title_accent_color</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Accent Title Color</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_title_accent_font_size" model="ir.model.fields">
+            <field name="name">x_title_accent_font_size</field>
+            <field name="ttype">integer</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Accent Title Font Size</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_description" model="ir.model.fields">
+            <field name="name">x_description</field>
+            <field name="ttype">text</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Description</field>
+            <field name="translate" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_description_color" model="ir.model.fields">
+            <field name="name">x_description_color</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Description Color</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_description_font_size" model="ir.model.fields">
+            <field name="name">x_description_font_size</field>
+            <field name="ttype">integer</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Description Font Size</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_primary_label" model="ir.model.fields">
+            <field name="name">x_primary_label</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Primary Button Label</field>
+            <field name="translate" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_primary_url" model="ir.model.fields">
+            <field name="name">x_primary_url</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Primary Button URL</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_secondary_label" model="ir.model.fields">
+            <field name="name">x_secondary_label</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Secondary Button Label</field>
+            <field name="translate" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_secondary_url" model="ir.model.fields">
+            <field name="name">x_secondary_url</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Secondary Button URL</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_hide_overlay" model="ir.model.fields">
+            <field name="name">x_hide_overlay</field>
+            <field name="ttype">boolean</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Hide Overlay</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_primary_btn_bg_color" model="ir.model.fields">
+            <field name="name">x_primary_btn_bg_color</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Primary Button Color</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_primary_btn_text_color" model="ir.model.fields">
+            <field name="name">x_primary_btn_text_color</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Primary Button Text Color</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_secondary_btn_bg_color" model="ir.model.fields">
+            <field name="name">x_secondary_btn_bg_color</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Secondary Button Color</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_home_banner_secondary_btn_text_color" model="ir.model.fields">
+            <field name="name">x_secondary_btn_text_color</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="field_description">Secondary Button Text Color</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="access_x_digitalx_home_banner_public" model="ir.model.access">
+            <field name="name">x_digitalx_home_banner public read</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="group_id" ref="base.group_public"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_x_digitalx_home_banner_portal" model="ir.model.access">
+            <field name="name">x_digitalx_home_banner portal read</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="group_id" ref="base.group_portal"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_x_digitalx_home_banner_user" model="ir.model.access">
+            <field name="name">x_digitalx_home_banner user full</field>
+            <field name="model_id" ref="model_x_digitalx_home_banner"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+    </data>
+</odoo>

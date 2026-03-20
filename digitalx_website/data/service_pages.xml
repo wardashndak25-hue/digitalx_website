@@ -1,0 +1,1177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <template id="dx_service_page_styles" name="DX Service Page Styles" inherit_id="website.layout" priority="45">
+            <xpath expr="//head" position="inside">
+                <style>
+                    .dx-page-shell { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+                    .dx-service-hero {
+                        padding: 116px 0 92px;
+                        color: #fff;
+                        background-image:
+                            linear-gradient(180deg, rgba(33,37,41,0.82) 0%, rgba(33,37,41,0.54) 100%),
+                            var(--dx-service-hero-image);
+                        background-position: center;
+                        background-size: cover;
+                    }
+                    .dx-page-kicker {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 8px;
+                        padding: 9px 16px;
+                        border-radius: 999px;
+                        background: rgba(192,57,43,0.16);
+                        color: #f1f2f4;
+                        font-size: 12px;
+                        font-weight: 800;
+                        letter-spacing: 0.14em;
+                        text-transform: uppercase;
+                    }
+                    .dx-page-kicker:before {
+                        content: '';
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                        background: var(--dx-primary);
+                    }
+                    .dx-page-title {
+                        margin: 18px 0 14px;
+                        max-width: 840px;
+                        font-family: var(--dx-font-head);
+                        font-size: clamp(2.4rem, 4vw, 4.9rem);
+                        line-height: 0.98;
+                        letter-spacing: -0.03em;
+                    }
+                    .dx-page-copy {
+                        max-width: 720px;
+                        margin: 0;
+                        color: rgba(255,255,255,0.82);
+                        font-size: 16px;
+                        line-height: 1.9;
+                    }
+                    .dx-page-actions,
+                    .dx-link-row {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 14px;
+                        margin-top: 28px;
+                    }
+                    .dx-page-btn-primary,
+                    .dx-page-btn-secondary,
+                    .dx-link-row a {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        min-height: 50px;
+                        padding: 0 22px;
+                        border-radius: 999px;
+                        font-size: 14px;
+                        font-weight: 800;
+                        text-decoration: none !important;
+                    }
+                    .dx-page-btn-primary,
+                    .dx-link-row a:first-child {
+                        background: linear-gradient(135deg, var(--dx-primary), var(--dx-primary-hover));
+                        color: #fff !important;
+                        box-shadow: 0 18px 34px -24px rgba(192,57,43,0.42);
+                    }
+                    .dx-page-btn-secondary,
+                    .dx-link-row a:last-child {
+                        background: rgba(255,255,255,0.12);
+                        border: 1px solid rgba(255,255,255,0.28);
+                        color: #fff !important;
+                    }
+                    .dx-page-section { padding: 90px 0; background: var(--dx-ivory-strong); }
+                    .dx-page-section.dx-page-section-alt { background: var(--dx-ivory); }
+                    .dx-page-section.dx-page-section-dark {
+                        background: linear-gradient(120deg, #17120f 0%, #2b221a 55%, #563b1f 100%);
+                        color: #fff;
+                    }
+                    .dx-page-head { max-width: 760px; margin-bottom: 34px; }
+                    .dx-page-head h2,
+                    .dx-panel h2,
+                    .dx-form-panel h2,
+                    .dx-side-panel h2 {
+                        margin: 0 0 14px;
+                        font-family: var(--dx-font-head);
+                        font-size: 38px;
+                        line-height: 1.04;
+                        color: var(--dx-charcoal);
+                    }
+                    .dx-page-section-dark .dx-page-head h2,
+                    .dx-page-section-dark .dx-side-panel h2 { color: #fff; }
+                    .dx-page-head p,
+                    .dx-panel p,
+                    .dx-side-panel p,
+                    .dx-form-panel p,
+                    .dx-service-card p,
+                    .dx-project-card p,
+                    .dx-review-card p,
+                    .dx-highlight-card p {
+                        margin: 0;
+                        color: var(--dx-copy);
+                        font-size: 15px;
+                        line-height: 1.85;
+                    }
+                    .dx-page-section-dark .dx-page-head p,
+                    .dx-page-section-dark .dx-side-panel p,
+                    .dx-page-section-dark .dx-highlight-card p { color: rgba(255,255,255,0.78); }
+                    .dx-service-grid,
+                    .dx-project-grid,
+                    .dx-review-grid,
+                    .dx-highlight-grid {
+                        display: grid;
+                        gap: 18px;
+                    }
+                    .dx-service-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+                    .dx-project-grid,
+                    .dx-review-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+                    .dx-highlight-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 28px; }
+                    .dx-service-card,
+                    .dx-panel,
+                    .dx-side-panel,
+                    .dx-project-card,
+                    .dx-review-card,
+                    .dx-form-panel,
+                    .dx-highlight-card {
+                        padding: 26px;
+                        border-radius: 28px;
+                        background: linear-gradient(180deg, #fff 0%, var(--dx-ivory) 100%);
+                        border: 1px solid rgba(63,49,36,0.08);
+                        box-shadow: 0 20px 42px -36px rgba(23,17,12,0.24);
+                    }
+                    .dx-page-section-dark .dx-highlight-card {
+                        background: rgba(255,255,255,0.08);
+                        border-color: rgba(255,255,255,0.14);
+                        box-shadow: none;
+                    }
+                    .dx-service-card h3,
+                    .dx-project-card h3,
+                    .dx-review-card h3,
+                    .dx-highlight-card h3 {
+                        margin: 0 0 10px;
+                        font-size: 20px;
+                        font-weight: 800;
+                        color: var(--dx-charcoal);
+                    }
+                    .dx-page-section-dark .dx-highlight-card h3 { color: #fff; }
+                    .dx-card-link {
+                        display: block;
+                        color: inherit !important;
+                        text-decoration: none !important;
+                    }
+                    .dx-card-link:hover h3 { color: var(--dx-primary-hover); }
+                    .dx-split-grid {
+                        display: grid;
+                        grid-template-columns: 1.05fr 0.95fr;
+                        gap: 28px;
+                        align-items: start;
+                    }
+                    .dx-checklist {
+                        margin: 18px 0 0;
+                        padding: 0;
+                        list-style: none;
+                        display: grid;
+                        gap: 12px;
+                    }
+                    .dx-checklist li {
+                        position: relative;
+                        padding-inline-start: 18px;
+                        color: var(--dx-copy);
+                        font-size: 15px;
+                        line-height: 1.8;
+                    }
+                    .dx-checklist li:before {
+                        content: '';
+                        position: absolute;
+                        inset-inline-start: 0;
+                        top: 10px;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--dx-primary);
+                    }
+                    .dx-metric-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                        gap: 14px;
+                        margin-top: 22px;
+                    }
+                    .dx-metric {
+                        padding: 18px;
+                        border-radius: 20px;
+                        background: rgba(255,255,255,0.82);
+                        border: 1px solid rgba(63,49,36,0.08);
+                    }
+                    .dx-metric strong {
+                        display: block;
+                        margin-bottom: 8px;
+                        color: var(--dx-brass-deep);
+                        font-size: 15px;
+                        font-weight: 800;
+                        letter-spacing: 0.06em;
+                        text-transform: uppercase;
+                    }
+                    .dx-metric span {
+                        color: var(--dx-copy);
+                        font-size: 14px;
+                        line-height: 1.75;
+                    }
+                    .dx-pill-list {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        margin-top: 22px;
+                    }
+                    .dx-pill-list span,
+                    .dx-meta span {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 9px 14px;
+                        border-radius: 999px;
+                        background: rgba(192,57,43,0.08);
+                        color: var(--dx-primary-hover);
+                        font-size: 11px;
+                        font-weight: 800;
+                        letter-spacing: 0.12em;
+                        text-transform: uppercase;
+                    }
+                    .dx-project-card img {
+                        display: block;
+                        width: 100%;
+                        height: 220px;
+                        object-fit: cover;
+                        border-radius: 22px;
+                        margin-bottom: 18px;
+                    }
+                    .dx-meta {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 8px;
+                        margin-bottom: 12px;
+                    }
+                    .dx-resource-list {
+                        display: grid;
+                        grid-template-columns: repeat(3, minmax(0, 1fr));
+                        gap: 20px;
+                    }
+                    .dx-resource-card {
+                        display: flex;
+                        flex-direction: column;
+                        overflow: hidden;
+                        border-radius: 28px;
+                        background: linear-gradient(180deg, #fff 0%, var(--dx-ivory) 100%);
+                        border: 1px solid rgba(33,37,41,0.08);
+                        box-shadow: 0 20px 42px -36px rgba(33,37,41,0.2);
+                    }
+                    .dx-resource-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #fff; }
+                    .dx-resource-body { display: grid; gap: 10px; padding: 22px 20px 20px; flex: 1; }
+                    .dx-resource-body span {
+                        color: rgba(73,80,87,0.82);
+                        font-size: 11px;
+                        font-weight: 800;
+                        letter-spacing: 0.14em;
+                        text-transform: uppercase;
+                    }
+                    .dx-resource-body h3 {
+                        margin: 0;
+                        color: var(--dx-charcoal);
+                        font-size: 22px;
+                        line-height: 1.2;
+                        font-weight: 800;
+                        font-family: var(--dx-font-head);
+                    }
+                    .dx-resource-actions {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        margin-top: 6px;
+                    }
+                    .dx-resource-actions a {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        min-height: 44px;
+                        padding: 0 18px;
+                        border-radius: 999px;
+                        font-size: 13px;
+                        font-weight: 800;
+                        text-decoration: none !important;
+                    }
+                    .dx-resource-actions a:first-child {
+                        background: linear-gradient(135deg, var(--dx-primary), var(--dx-primary-hover));
+                        color: #fff !important;
+                    }
+                    .dx-resource-actions a:last-child {
+                        border: 1px solid rgba(33,37,41,0.12);
+                        background: rgba(255,255,255,0.9);
+                        color: var(--dx-charcoal) !important;
+                    }
+                    .dx-quote-grid {
+                        display: grid;
+                        grid-template-columns: 0.92fr 1.08fr;
+                        gap: 28px;
+                    }
+                    .dx-form-panel { padding: 32px; }
+                    .dx-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+                    .dx-form-group { margin-bottom: 16px; }
+                    .dx-form-group label {
+                        display: block;
+                        margin-bottom: 7px;
+                        font-size: 13px;
+                        font-weight: 800;
+                        color: var(--dx-charcoal);
+                        letter-spacing: 0.08em;
+                        text-transform: uppercase;
+                    }
+                    .dx-form-group input,
+                    .dx-form-group textarea,
+                    .dx-form-group select {
+                        width: 100%;
+                        padding: 13px 16px;
+                        border-radius: 16px;
+                        border: 1px solid rgba(63,49,36,0.12);
+                        background: rgba(255,255,255,0.88);
+                        color: var(--dx-charcoal);
+                        font-size: 15px;
+                    }
+                    .dx-form-group textarea { min-height: 170px; resize: vertical; }
+                    .dx-form-group input:focus,
+                    .dx-form-group textarea:focus,
+                    .dx-form-group select:focus {
+                        outline: none;
+                        border-color: rgba(192,57,43,0.5);
+                        box-shadow: 0 0 0 4px rgba(192,57,43,0.14);
+                    }
+                    .dx-submit {
+                        width: 100%;
+                        min-height: 54px;
+                        border: 0;
+                        border-radius: 18px;
+                        background: linear-gradient(135deg, var(--dx-charcoal), var(--dx-charcoal-soft));
+                        color: #fff;
+                        font-size: 15px;
+                        font-weight: 800;
+                    }
+                    .dx-form-note {
+                        margin: 12px 0 0;
+                        text-align: center;
+                        color: var(--dx-copy);
+                        font-size: 13px;
+                    }
+                    @media (max-width: 1199px) {
+                        .dx-service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+                        .dx-project-grid,
+                        .dx-review-grid,
+                        .dx-highlight-grid,
+                        .dx-resource-list { grid-template-columns: 1fr 1fr; }
+                    }
+                    @media (max-width: 991px) {
+                        .dx-split-grid,
+                        .dx-quote-grid,
+                        .dx-form-grid,
+                        .dx-project-grid,
+                        .dx-review-grid,
+                        .dx-highlight-grid,
+                        .dx-resource-list { grid-template-columns: 1fr; }
+                        .dx-metric-grid { grid-template-columns: 1fr; }
+                    }
+                    @media (max-width: 767px) {
+                        .dx-page-shell { padding: 0 18px; }
+                        .dx-service-hero { padding: 98px 0 74px; }
+                        .dx-page-section { padding: 74px 0; }
+                        .dx-service-grid { grid-template-columns: 1fr; }
+                        .dx-service-card,
+                        .dx-panel,
+                        .dx-side-panel,
+                        .dx-project-card,
+                        .dx-review-card,
+                        .dx-form-panel,
+                        .dx-highlight-card { padding: 22px; }
+                    }
+                </style>
+            </xpath>
+        </template>
+
+        <template id="dx_renovation_content" name="DX Bathroom Renovation Page">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure">
+                    <section class="dx-service-hero" style="--dx-service-hero-image:url('/digitalx_website/static/src/img/besco/lifestyle/bath-travel.jpg');">
+                        <div class="dx-page-shell">
+                            <span class="dx-page-kicker">Bathroom Renovation Dublin</span>
+                            <h1 class="dx-page-title">Bathroom Renovation &amp; Design Specialists in Dublin</h1>
+                            <p class="dx-page-copy">Craik &amp; Comfort is positioned around a complete renovation journey for Dublin homeowners: design guidance, product supply, project organisation, and a clearer route from first consultation to final bathroom finish.</p>
+                            <div class="dx-page-actions">
+                                <a href="/contactus" class="dx-page-btn-primary">Book a Bathroom Consultation</a>
+                                <a href="/request-quote" class="dx-page-btn-secondary">Request a Quote</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section">
+                        <div class="dx-page-shell">
+                            <div class="dx-page-head">
+                                <h2>What the renovation service covers.</h2>
+                                <p>This page is structured to target homeowners searching for bathroom renovation support in Dublin, while clearly showing what Craik &amp; Comfort manages during the project.</p>
+                            </div>
+                            <div class="dx-service-grid">
+                                <div class="dx-service-card">
+                                    <h3>Consultation &amp; room review</h3>
+                                    <p>Define the room goals, the practical constraints, and the level of finish needed before products or quotes are finalised.</p>
+                                </div>
+                                <div class="dx-service-card">
+                                    <h3>Design &amp; layout planning</h3>
+                                    <p>Bring clarity to spacing, product compatibility, storage needs, and the visual direction of the new bathroom.</p>
+                                </div>
+                                <div class="dx-service-card">
+                                    <h3>Supply &amp; coordination</h3>
+                                    <p>Align basins, baths, brassware, enclosures, and related products with the real installation plan.</p>
+                                </div>
+                                <div class="dx-service-card">
+                                    <h3>Finalise &amp; client handover</h3>
+                                    <p>Keep the finishing stage cleaner by reviewing the selected products, project details, and sign-off priorities.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section dx-page-section-alt">
+                        <div class="dx-page-shell">
+                            <div class="dx-split-grid">
+                                <div class="dx-panel">
+                                    <h2>Designed for homeowners who want a clearer renovation plan.</h2>
+                                    <p>Irish renovation enquiries tend to move faster when the website explains the process in plain language. This page now frames Craik &amp; Comfort as a project-focused partner, not only a product source.</p>
+                                    <ul class="dx-checklist">
+                                        <li>Room goals, measurements, and layout direction are discussed before product decisions are locked in.</li>
+                                        <li>Product selection is matched to installation logic, not treated as a disconnected shop order.</li>
+                                        <li>Installer communication can be supported where the client already has a plumber or fitter.</li>
+                                        <li>The service message stays anchored around Design, Supply, and Finalise.</li>
+                                    </ul>
+                                </div>
+                                <div class="dx-side-panel">
+                                    <h2>What clients usually ask first.</h2>
+                                    <p>The page answers the core commercial questions without overpromising exact numbers before scope has been reviewed.</p>
+                                    <div class="dx-metric-grid">
+                                        <div class="dx-metric">
+                                            <strong>Timeline Planning</strong>
+                                            <span>Consultation, product lead times, and installer coordination are explained early.</span>
+                                        </div>
+                                        <div class="dx-metric">
+                                            <strong>Budget Guidance</strong>
+                                            <span>Finish level, room size, and product priorities are reviewed before the quote is finalised.</span>
+                                        </div>
+                                        <div class="dx-metric">
+                                            <strong>Dublin Focus</strong>
+                                            <span>The page language is aimed at renovation searches in Dublin and the wider Irish market.</span>
+                                        </div>
+                                        <div class="dx-metric">
+                                            <strong>Service Areas</strong>
+                                            <span>Dublin, Dublin 15, surrounding areas, and selected Ireland-wide supply enquiries.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section">
+                        <div class="dx-page-shell">
+                            <div class="dx-page-head">
+                                <h2>Typical renovation briefs the site can convert.</h2>
+                                <p>Instead of generic brochure copy, the page can now guide visitors by the type of bathroom project they are trying to complete.</p>
+                            </div>
+                            <div class="dx-highlight-grid">
+                                <div class="dx-highlight-card">
+                                    <h3>Family bathroom refresh</h3>
+                                    <p>Update dated layouts, replace worn products, and coordinate a room that feels cleaner, brighter, and easier to use daily.</p>
+                                </div>
+                                <div class="dx-highlight-card">
+                                    <h3>Ensuite rework</h3>
+                                    <p>Improve compact spaces with stronger planning, more suitable showering solutions, and a tighter finish selection.</p>
+                                </div>
+                                <div class="dx-highlight-card">
+                                    <h3>Premium main bathroom upgrade</h3>
+                                    <p>Bring together a statement bath, refined fittings, and more polished specification support for higher-end projects.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section dx-page-section-dark">
+                        <div class="dx-page-shell">
+                            <div class="dx-page-head">
+                                <h2>Ready to plan your bathroom renovation in Dublin?</h2>
+                                <p>Move the visitor toward a quote or consultation instead of leaving them at the browsing stage.</p>
+                            </div>
+                            <div class="dx-link-row">
+                                <a href="/contactus">Book a Consultation</a>
+                                <a href="/request-quote">Request a Quote</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+
+        <template id="dx_design_service_content" name="DX Bathroom Design Service Page">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure">
+                    <section class="dx-service-hero" style="--dx-service-hero-image:url('/digitalx_website/static/src/img/besco/lifestyle/aspen.jpg');">
+                        <div class="dx-page-shell">
+                            <span class="dx-page-kicker">Bathroom Design Dublin</span>
+                            <h1 class="dx-page-title">Bathroom Design Service for Dublin Renovation Projects</h1>
+                            <p class="dx-page-copy">This page supports homeowners who need help planning the room before final product selection. It gives Craik &amp; Comfort a dedicated landing page for design consultation, layout planning, and style direction.</p>
+                            <div class="dx-page-actions">
+                                <a href="/contactus" class="dx-page-btn-primary">Book a Design Consultation</a>
+                                <a href="/request-quote" class="dx-page-btn-secondary">Request a Project Quote</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section">
+                        <div class="dx-page-shell">
+                            <div class="dx-page-head">
+                                <h2>What the design service helps with.</h2>
+                                <p>Design-led visitors often need a clearer route to room planning before they are ready to buy. This page is built around that earlier-stage demand.</p>
+                            </div>
+                            <div class="dx-service-grid">
+                                <div class="dx-service-card">
+                                    <h3>Layout planning</h3>
+                                    <p>Review how the room should flow, what fits practically, and which products make sense together.</p>
+                                </div>
+                                <div class="dx-service-card">
+                                    <h3>Finish direction</h3>
+                                    <p>Match white ceramics, warm metals, glass systems, and stone-inspired tones with the right level of contrast.</p>
+                                </div>
+                                <div class="dx-service-card">
+                                    <h3>Product specification</h3>
+                                    <p>Choose the basins, baths, shower solutions, and fittings that support the project scope without confusion.</p>
+                                </div>
+                                <div class="dx-service-card">
+                                    <h3>Installer-ready communication</h3>
+                                    <p>Reduce guesswork by aligning the design intent with product decisions before installation begins.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section dx-page-section-alt">
+                        <div class="dx-page-shell">
+                            <div class="dx-split-grid">
+                                <div class="dx-panel">
+                                    <h2>Design support that feels practical, not vague.</h2>
+                                    <p>The page positions Craik &amp; Comfort as a bathroom design guide for Dublin clients who want help translating inspiration into a room that can actually be delivered.</p>
+                                    <ul class="dx-checklist">
+                                        <li>Plan layouts before the wrong products are ordered.</li>
+                                        <li>Coordinate finishes so the room feels consistent, not pieced together.</li>
+                                        <li>Use product guidance to shorten the decision stage.</li>
+                                        <li>Keep the project message connected to the later supply and finalise stages.</li>
+                                    </ul>
+                                </div>
+                                <div class="dx-side-panel">
+                                    <h2>Styles this page can support.</h2>
+                                    <p>These style cues give the website stronger relevance for design-led searches and consultation enquiries.</p>
+                                    <div class="dx-pill-list">
+                                        <span>Warm Stone Neutrals</span>
+                                        <span>Brushed Brass Detail</span>
+                                        <span>Compact Family Layouts</span>
+                                        <span>Walk-In Shower Planning</span>
+                                        <span>Freestanding Bath Focus</span>
+                                        <span>Minimal Glass Systems</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section">
+                        <div class="dx-page-shell">
+                            <div class="dx-page-head">
+                                <h2>Why this page matters commercially.</h2>
+                                <p>Not every visitor is ready to buy immediately. A dedicated design service page captures earlier-stage leads that still convert into product supply and renovation work later.</p>
+                            </div>
+                            <div class="dx-highlight-grid">
+                                <div class="dx-highlight-card">
+                                    <h3>Reduces product mismatch</h3>
+                                    <p>Clients are less likely to order items that do not suit the room size, layout, or installer requirements.</p>
+                                </div>
+                                <div class="dx-highlight-card">
+                                    <h3>Builds higher-trust enquiries</h3>
+                                    <p>Visitors reach out with more context once the design process is clearly explained on the site.</p>
+                                </div>
+                                <div class="dx-highlight-card">
+                                    <h3>Supports renovation upsell</h3>
+                                    <p>Design consultation naturally leads into the supply and project organisation conversation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+
+        <template id="dx_supply_service_content" name="DX Bathroom Supply &amp; Shop Page">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure">
+                    <section class="dx-service-hero" style="--dx-service-hero-image:url('/digitalx_website/static/src/img/besco/lifestyle/showers.jpg');">
+                        <div class="dx-page-shell">
+                            <span class="dx-page-kicker">Bathroom Supply &amp; Shop</span>
+                            <h1 class="dx-page-title">Bathroom Supply &amp; Shop for Dublin and Ireland</h1>
+                            <p class="dx-page-copy">This page bridges the commercial gap between service-led renovation enquiries and the actual product catalog. It gives the shop a stronger role inside the renovation journey.</p>
+                            <div class="dx-page-actions">
+                                <a href="/shop" class="dx-page-btn-primary">Open the Shop</a>
+                                <a href="/request-quote" class="dx-page-btn-secondary">Request Product Pricing</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section">
+                        <div class="dx-page-shell">
+                            <div class="dx-page-head">
+                                <h2>Core product groups customers buy during renovations.</h2>
+                                <p>The page now aligns the shop with real renovation buying behaviour instead of leaving products disconnected from the service story.</p>
+                            </div>
+                            <div class="dx-service-grid">
+                                <a href="/shop?search=Bathtubs" class="dx-service-card dx-card-link">
+                                    <h3>Besco bathtubs</h3>
+                                    <p>Freestanding and built-in bathing options suited to premium room upgrades and full bathroom reworks.</p>
+                                </a>
+                                <a href="/shop?search=BathtubScreens" class="dx-service-card dx-card-link">
+                                    <h3>Shower screens</h3>
+                                    <p>Bath screens and glass-led systems that support practical layouts without closing the room in visually.</p>
+                                </a>
+                                <a href="/shop?search=Washbasins" class="dx-service-card dx-card-link">
+                                    <h3>Bathroom furniture &amp; basins</h3>
+                                    <p>Vanity-led focal pieces and supporting basin selections for more resolved bathroom compositions.</p>
+                                </a>
+                                <a href="/shop?search=Faucets" class="dx-service-card dx-card-link">
+                                    <h3>Taps &amp; accessories</h3>
+                                    <p>Brassware, fittings, and finishing details that tie the whole room together.</p>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section dx-page-section-alt">
+                        <div class="dx-page-shell">
+                            <div class="dx-split-grid">
+                                <div class="dx-panel">
+                                    <h2>Supply that supports the project, not just the checkout.</h2>
+                                    <p>For renovation clients, the shop works best when it is backed by delivery guidance, product coordination, and communication that fits a live project.</p>
+                                    <ul class="dx-checklist">
+                                        <li>Shop products directly from the website.</li>
+                                        <li>Ask for help matching products across the same room scheme.</li>
+                                        <li>Coordinate supply with installers and project timing.</li>
+                                        <li>Support enquiries in Dublin and wider Ireland where relevant.</li>
+                                    </ul>
+                                </div>
+                                <div class="dx-side-panel">
+                                    <h2>What this page needs to communicate.</h2>
+                                    <p>Irish homeowners want clarity around availability, support, and whether the supplier understands a renovation workflow.</p>
+                                    <div class="dx-metric-grid">
+                                        <div class="dx-metric">
+                                            <strong>Purchase</strong>
+                                            <span>Give visitors a direct route into the product catalog.</span>
+                                        </div>
+                                        <div class="dx-metric">
+                                            <strong>Delivery</strong>
+                                            <span>Position the business for Dublin delivery and selected Ireland-wide enquiries.</span>
+                                        </div>
+                                        <div class="dx-metric">
+                                            <strong>Coordination</strong>
+                                            <span>Show that product supply can be aligned with renovation planning.</span>
+                                        </div>
+                                        <div class="dx-metric">
+                                            <strong>Support</strong>
+                                            <span>Encourage product advice requests before a larger order is confirmed.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+
+        <template id="dx_besco_products_content" name="DX Besco Products Page">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure">
+                    <section class="dx-service-hero" style="--dx-service-hero-image:url('/digitalx_website/static/src/img/besco/categories/bathtubs.jpg');">
+                        <div class="dx-page-shell">
+                            <span class="dx-page-kicker">Besco Bathroom Products</span>
+                            <h1 class="dx-page-title">Besco Bathroom Products for Dublin and Irish Renovation Projects</h1>
+                            <p class="dx-page-copy">This page gives Craik &amp; Comfort a dedicated Besco landing page for search visibility, product discovery, and design-led renovation enquiries.</p>
+                            <div class="dx-page-actions">
+                                <a href="/shop" class="dx-page-btn-primary">Browse Besco-Ready Categories</a>
+                                <a href="/request-quote" class="dx-page-btn-secondary">Request Besco Pricing</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section">
+                        <div class="dx-page-shell">
+                            <div class="dx-page-head">
+                                <h2>Besco collections that support a stronger room story.</h2>
+                                <p>The page is structured around the product families homeowners actually compare when planning a renovation.</p>
+                            </div>
+                            <div class="dx-service-grid">
+                                <div class="dx-service-card">
+                                    <h3>Bathtub collections</h3>
+                                    <p>Compact and statement bathing options for family bathrooms, ensuites, and premium main-room upgrades.</p>
+                                </div>
+                                <div class="dx-service-card">
+                                    <h3>Shower solutions</h3>
+                                    <p>Trays, enclosures, and related components for clean layouts with stronger practical performance.</p>
+                                </div>
+                                <div class="dx-service-card">
+                                    <h3>Design inspiration</h3>
+                                    <p>Use Besco imagery and product groups to guide clients toward layouts that feel calm, modern, and consistent.</p>
+                                </div>
+                                <div class="dx-service-card">
+                                    <h3>Catalog access</h3>
+                                    <p>Direct catalog downloads help clients, installers, and project decision-makers review collections quickly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section dx-page-section-alt">
+                        <div class="dx-page-shell">
+                            <div class="dx-page-head">
+                                <h2>Catalogs and product resources.</h2>
+                                <p>These assets turn the Besco page into a stronger reference point for homeowners and renovation decision-makers.</p>
+                            </div>
+                            <div class="dx-resource-list">
+                                <article class="dx-resource-card">
+                                    <img src="/digitalx_website/static/src/img/besco/catalog-covers/besco-kabiny-2026.jpg" alt="Besco Kabiny 2026 catalog cover"/>
+                                    <div class="dx-resource-body">
+                                        <span>PDF Catalog</span>
+                                        <h3>Besco Kabiny 2026</h3>
+                                        <p>A shower enclosure catalog covering doors, cabins, and system options relevant to modern bathroom projects.</p>
+                                        <div class="dx-resource-actions">
+                                            <a href="https://besco.eu/img/cms/Katalogi/Besco_Kabiny_2026.pdf" target="_blank" rel="noopener noreferrer">Open Catalog</a>
+                                            <a href="https://besco.eu/img/cms/Katalogi/Besco_Kabiny_2026.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="dx-resource-card">
+                                    <img src="/digitalx_website/static/src/img/besco/catalog-covers/cerabe-2025.jpg" alt="CeraBe 2025 catalog cover"/>
+                                    <div class="dx-resource-body">
+                                        <span>PDF Catalog</span>
+                                        <h3>CeraBe 2025</h3>
+                                        <p>Useful for ceramic-led bathroom planning and broader basin selections that support design consultations.</p>
+                                        <div class="dx-resource-actions">
+                                            <a href="https://besco.eu/img/cms/Katalogi/Katalog%20CeraBe%2025.pdf" target="_blank" rel="noopener noreferrer">Open Catalog</a>
+                                            <a href="https://besco.eu/img/cms/Katalogi/Katalog%20CeraBe%2025.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="dx-resource-card">
+                                    <img src="/digitalx_website/static/src/img/besco/catalog-covers/mini-katalog-2025.jpg" alt="Mini Katalog 2025 cover"/>
+                                    <div class="dx-resource-body">
+                                        <span>PDF Catalog</span>
+                                        <h3>Mini Katalog 2025</h3>
+                                        <p>A compact product overview for faster sharing during consultation, supply, and project coordination conversations.</p>
+                                        <div class="dx-resource-actions">
+                                            <a href="https://besco.eu/img/cms/Katalogi/Mini%20katalog%2025.pdf" target="_blank" rel="noopener noreferrer">Open Catalog</a>
+                                            <a href="https://besco.eu/img/cms/Katalogi/Mini%20katalog%2025.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+
+        <template id="dx_project_org_content" name="DX Project Organisation Page">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure">
+                    <section class="dx-service-hero" style="--dx-service-hero-image:url('/digitalx_website/static/src/img/besco/lifestyle/showers.jpg');">
+                        <div class="dx-page-shell">
+                            <span class="dx-page-kicker">Project Organisation Service</span>
+                            <h1 class="dx-page-title">Bathroom Project Organisation for Clients Who Already Have an Installer</h1>
+                            <p class="dx-page-copy">Many renovation clients already know a plumber or fitter but still need help planning the room, selecting products, and keeping the project aligned. This service page is built around that exact need.</p>
+                            <div class="dx-page-actions">
+                                <a href="/contactus" class="dx-page-btn-primary">Discuss Your Project</a>
+                                <a href="/request-quote" class="dx-page-btn-secondary">Request a Coordinated Quote</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section">
+                        <div class="dx-page-shell">
+                            <div class="dx-page-head">
+                                <h2>How the organisation service differentiates Craik &amp; Comfort.</h2>
+                                <p>This is not a standard supplier-only message. The page gives the brand a more valuable position between the client, the products, and the installer.</p>
+                            </div>
+                            <div class="dx-service-grid">
+                                <div class="dx-service-card">
+                                    <h3>Product selection</h3>
+                                    <p>Help clients build a room with compatible products rather than separate purchases that create installation issues later.</p>
+                                </div>
+                                <div class="dx-service-card">
+                                    <h3>Renovation planning</h3>
+                                    <p>Sequence the product decisions around the real project flow so ordering, delivery, and fitting stay more coordinated.</p>
+                                </div>
+                                <div class="dx-service-card">
+                                    <h3>Installer communication</h3>
+                                    <p>Support clearer discussion with the plumber or fitter once the room direction and product set are defined.</p>
+                                </div>
+                                <div class="dx-service-card">
+                                    <h3>Finalise support</h3>
+                                    <p>Keep the end of the project cleaner by checking the agreed products, finish direction, and remaining decisions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section dx-page-section-alt">
+                        <div class="dx-page-shell">
+                            <div class="dx-split-grid">
+                                <div class="dx-panel">
+                                    <h2>Design, Supply, Finalise.</h2>
+                                    <p>This phrase can now be used as a simple commercial explanation of the full service model on the website.</p>
+                                    <ul class="dx-checklist">
+                                        <li>Design: define the room intent, layout, finish level, and product direction.</li>
+                                        <li>Supply: align the product list with availability, delivery, and project requirements.</li>
+                                        <li>Finalise: support the last stage so the room is completed with fewer loose ends.</li>
+                                    </ul>
+                                </div>
+                                <div class="dx-side-panel">
+                                    <h2>Who this page is for.</h2>
+                                    <div class="dx-pill-list">
+                                        <span>Homeowners with a Plumber</span>
+                                        <span>Installer-Led Projects</span>
+                                        <span>Design-Led Supply</span>
+                                        <span>Room Replanning</span>
+                                        <span>Dublin Renovations</span>
+                                        <span>Trade Coordination</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+
+        <template id="dx_projects_content" name="DX Before &amp; After Projects Page">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure">
+                    <section class="dx-service-hero" style="--dx-service-hero-image:url('/digitalx_website/static/src/img/besco/lifestyle/small-bathroom.jpg');">
+                        <div class="dx-page-shell">
+                            <span class="dx-page-kicker">Before &amp; After Projects</span>
+                            <h1 class="dx-page-title">Before &amp; After Bathroom Projects Built for Trust and Enquiries</h1>
+                            <p class="dx-page-copy">This page is now positioned as the place to publish approved project stories with before photos, after photos, materials used, timeline notes, and budget guidance once the client assets are ready.</p>
+                            <div class="dx-page-actions">
+                                <a href="/request-quote" class="dx-page-btn-primary">Request a Project Quote</a>
+                                <a href="/contactus" class="dx-page-btn-secondary">Book a Consultation</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section">
+                        <div class="dx-page-shell">
+                            <div class="dx-page-head">
+                                <h2>What each project story should show.</h2>
+                                <p>Irish homeowners tend to trust renovation businesses more when the project page includes the details that matter commercially, not just polished final photography.</p>
+                            </div>
+                            <div class="dx-highlight-grid">
+                                <div class="dx-highlight-card">
+                                    <h3>Before photos</h3>
+                                    <p>Show the starting point so visitors can understand the real change delivered by the renovation plan.</p>
+                                </div>
+                                <div class="dx-highlight-card">
+                                    <h3>After photos</h3>
+                                    <p>Display the finished room clearly, with materials, fittings, and the overall atmosphere visible.</p>
+                                </div>
+                                <div class="dx-highlight-card">
+                                    <h3>Budget, timeline, materials</h3>
+                                    <p>Include the practical details Irish homeowners compare before requesting a consultation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section dx-page-section-alt">
+                        <div class="dx-page-shell">
+                            <div class="dx-page-head">
+                                <h2>Project story format ready for approved case studies.</h2>
+                                <p>Until final project assets are supplied, this page is structured to show exactly how renovation stories can be presented.</p>
+                            </div>
+                            <div class="dx-project-grid">
+                                <div class="dx-project-card">
+                                    <img src="/digitalx_website/static/src/img/besco/lifestyle/showers.jpg" alt="Compact bathroom project format"/>
+                                    <div class="dx-meta">
+                                        <span>Case Study Format</span>
+                                        <span>Before / After / Scope</span>
+                                    </div>
+                                    <h3>Compact family bathroom refresh</h3>
+                                    <p>Ready to display room constraints, selected products, timeline notes, and the final bathroom outcome once approved project content is available.</p>
+                                </div>
+                                <div class="dx-project-card">
+                                    <img src="/digitalx_website/static/src/img/besco/lifestyle/bath-travel.jpg" alt="Main bathroom project format"/>
+                                    <div class="dx-meta">
+                                        <span>Case Study Format</span>
+                                        <span>Design / Supply / Finalise</span>
+                                    </div>
+                                    <h3>Statement main bathroom upgrade</h3>
+                                    <p>Designed to showcase the role of layout planning, premium fittings, and room-wide product coordination.</p>
+                                </div>
+                                <div class="dx-project-card">
+                                    <img src="/digitalx_website/static/src/img/besco/lifestyle/aspen.jpg" alt="Ensuite project format"/>
+                                    <div class="dx-meta">
+                                        <span>Case Study Format</span>
+                                        <span>Timeline / Materials / Budget</span>
+                                    </div>
+                                    <h3>Ensuite modernisation story</h3>
+                                    <p>Structured to present the project brief, key materials, lead-time notes, and the commercial detail that improves trust.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+
+        <template id="dx_reviews_content" name="DX Customer Reviews Page">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure">
+                    <section class="dx-service-hero" style="--dx-service-hero-image:url('/digitalx_website/static/src/img/craikcomfort/marble-hero.webp');">
+                        <div class="dx-page-shell">
+                            <span class="dx-page-kicker">Customer Reviews</span>
+                            <h1 class="dx-page-title">Customer Reviews and Trust Signals for Bathroom Renovation Enquiries</h1>
+                            <p class="dx-page-copy">This page gives Craik &amp; Comfort a dedicated trust layer for Google-driven Irish visitors who want social proof before starting a renovation conversation.</p>
+                            <div class="dx-page-actions">
+                                <a href="/contactus" class="dx-page-btn-primary">Book a Consultation</a>
+                                <a href="/request-quote" class="dx-page-btn-secondary">Request a Quote</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section">
+                        <div class="dx-page-shell">
+                            <div class="dx-page-head">
+                                <h2>Review sources this page is ready to support.</h2>
+                                <p>Real approved feedback can be published here from the channels Irish homeowners check most before choosing a renovation partner.</p>
+                            </div>
+                            <div class="dx-review-grid">
+                                <div class="dx-review-card">
+                                    <div class="dx-meta"><span>Google</span></div>
+                                    <h3>Google Reviews</h3>
+                                    <p>Use this area for approved Google review excerpts and source links that strengthen local trust and search credibility.</p>
+                                </div>
+                                <div class="dx-review-card">
+                                    <div class="dx-meta"><span>Facebook</span></div>
+                                    <h3>Facebook Recommendations</h3>
+                                    <p>Show social proof from Facebook so visitors see consistent trust signals beyond the website itself.</p>
+                                </div>
+                                <div class="dx-review-card">
+                                    <div class="dx-meta"><span>Verified Clients</span></div>
+                                    <h3>Direct Client Feedback</h3>
+                                    <p>Publish approved project comments tied to renovation scope, product support, or design guidance.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section dx-page-section-alt">
+                        <div class="dx-page-shell">
+                            <div class="dx-split-grid">
+                                <div class="dx-panel">
+                                    <h2>Why this page matters in the Irish market.</h2>
+                                    <p>For renovation services, trust content is not optional. Visitors comparing providers want visible proof that the business understands projects, communicates clearly, and follows through.</p>
+                                    <ul class="dx-checklist">
+                                        <li>Google search traffic converts better when trust content is easy to find.</li>
+                                        <li>Project-led reviews support both the service pages and the product pages.</li>
+                                        <li>Local market knowledge feels stronger when testimonials reference real project experiences.</li>
+                                    </ul>
+                                </div>
+                                <div class="dx-side-panel">
+                                    <h2>Trust signals already built into the site.</h2>
+                                    <div class="dx-metric-grid">
+                                        <div class="dx-metric">
+                                            <strong>Visible Contact</strong>
+                                            <span>Phone, WhatsApp, and email remain prominent across the site.</span>
+                                        </div>
+                                        <div class="dx-metric">
+                                            <strong>Service Pages</strong>
+                                            <span>Renovation, design, and project organisation pages reinforce the core offer.</span>
+                                        </div>
+                                        <div class="dx-metric">
+                                            <strong>Quote Route</strong>
+                                            <span>Request a Quote and consultation CTAs give visitors a direct next step.</span>
+                                        </div>
+                                        <div class="dx-metric">
+                                            <strong>Project Focus</strong>
+                                            <span>Before &amp; After content is now part of the conversion path.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+
+        <template id="dx_request_quote_content" name="DX Request a Quote Page">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure">
+                    <section class="dx-service-hero" style="--dx-service-hero-image:url('/digitalx_website/static/src/img/besco/lifestyle/zarya.jpg');">
+                        <div class="dx-page-shell">
+                            <span class="dx-page-kicker">Request a Quote</span>
+                            <h1 class="dx-page-title">Request a Bathroom Renovation or Supply Quote</h1>
+                            <p class="dx-page-copy">This page gives Craik &amp; Comfort a dedicated quote route for renovation, design, product supply, and project organisation enquiries.</p>
+                        </div>
+                    </section>
+
+                    <section class="dx-page-section">
+                        <div class="dx-page-shell">
+                            <div class="dx-quote-grid">
+                                <div class="dx-side-panel">
+                                    <h2>What to include in your quote request.</h2>
+                                    <p>A stronger enquiry usually includes enough context to move the conversation forward quickly.</p>
+                                    <ul class="dx-checklist">
+                                        <li>Tell us whether the enquiry is for renovation, design support, supply, or project coordination.</li>
+                                        <li>Include the project location, room type, and the stage you are currently at.</li>
+                                        <li>Share the products, finishes, or Besco ranges you are considering if known.</li>
+                                        <li>Use the message field for timeline notes, budget guidance needs, and installer context.</li>
+                                    </ul>
+                                    <div class="dx-pill-list">
+                                        <span>Dublin Renovation Leads</span>
+                                        <span>Design Consultation</span>
+                                        <span>Supply Pricing</span>
+                                        <span>Project Coordination</span>
+                                    </div>
+                                </div>
+
+                                <div class="dx-form-panel">
+                                    <h2>Send your quote request.</h2>
+                                    <p>The form is positioned to capture the kind of enquiry that can convert into a consultation or project brief.</p>
+
+                                    <form action="/website/form/" method="post" class="s_website_form" enctype="multipart/form-data" data-model_name="mail.mail" data-success-mode="redirect" data-success-page="/request-quote">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <input type="hidden" name="email_to" value="info@craikcomfort.ie"/>
+
+                                        <div class="dx-form-grid">
+                                            <div class="dx-form-group">
+                                                <label for="dx_quote_name">Full Name</label>
+                                                <input type="text" id="dx_quote_name" name="name" required="required" placeholder="Your full name"/>
+                                            </div>
+                                            <div class="dx-form-group">
+                                                <label for="dx_quote_phone">Phone / WhatsApp</label>
+                                                <input type="tel" id="dx_quote_phone" name="phone" placeholder="353 ..."/>
+                                            </div>
+                                        </div>
+
+                                        <div class="dx-form-grid">
+                                            <div class="dx-form-group">
+                                                <label for="dx_quote_email">Email</label>
+                                                <input type="email" id="dx_quote_email" name="email_from" required="required" placeholder="name@example.com"/>
+                                            </div>
+                                            <div class="dx-form-group">
+                                                <label for="dx_quote_subject">Enquiry Type</label>
+                                                <select id="dx_quote_subject" name="subject" required="required">
+                                                    <option value="">Select enquiry type</option>
+                                                    <option value="Bathroom Renovation Quote">Bathroom Renovation Quote</option>
+                                                    <option value="Bathroom Design Consultation">Bathroom Design Consultation</option>
+                                                    <option value="Bathroom Supply Pricing">Bathroom Supply Pricing</option>
+                                                    <option value="Project Organisation Support">Project Organisation Support</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="dx-form-group">
+                                            <label for="dx_quote_message">Project Details</label>
+                                            <textarea id="dx_quote_message" name="body_html" required="required" placeholder="Tell us about the room, location, timeline, products, and the type of help you need."></textarea>
+                                        </div>
+
+                                        <button type="submit" class="dx-submit s_website_form_send">Request Quote</button>
+                                        <p class="dx-form-note">Your enquiry routes directly to info@craikcomfort.ie.</p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+
+        <record id="dx_renovation_page" model="website.page">
+            <field name="name">Bathroom Renovation Dublin</field>
+            <field name="url">/bathroom-renovation-dublin</field>
+            <field name="view_id" ref="dx_renovation_content"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="website_indexed" eval="True"/>
+            <field name="is_published" eval="True"/>
+        </record>
+
+        <record id="dx_design_service_page" model="website.page">
+            <field name="name">Bathroom Design Service</field>
+            <field name="url">/bathroom-design-dublin</field>
+            <field name="view_id" ref="dx_design_service_content"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="website_indexed" eval="True"/>
+            <field name="is_published" eval="True"/>
+        </record>
+
+        <record id="dx_supply_service_page" model="website.page">
+            <field name="name">Bathroom Supply &amp; Shop</field>
+            <field name="url">/bathroom-supply-shop</field>
+            <field name="view_id" ref="dx_supply_service_content"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="website_indexed" eval="True"/>
+            <field name="is_published" eval="True"/>
+        </record>
+
+        <record id="dx_besco_products_page" model="website.page">
+            <field name="name">Besco Bathroom Products</field>
+            <field name="url">/besco-bathroom-products</field>
+            <field name="view_id" ref="dx_besco_products_content"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="website_indexed" eval="True"/>
+            <field name="is_published" eval="True"/>
+        </record>
+
+        <record id="dx_project_org_page" model="website.page">
+            <field name="name">Bathroom Project Organisation Service</field>
+            <field name="url">/bathroom-project-organisation</field>
+            <field name="view_id" ref="dx_project_org_content"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="website_indexed" eval="True"/>
+            <field name="is_published" eval="True"/>
+        </record>
+
+        <record id="dx_projects_page" model="website.page">
+            <field name="name">Before &amp; After Projects</field>
+            <field name="url">/before-after-projects</field>
+            <field name="view_id" ref="dx_projects_content"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="website_indexed" eval="True"/>
+            <field name="is_published" eval="True"/>
+        </record>
+
+        <record id="dx_reviews_page" model="website.page">
+            <field name="name">Customer Reviews</field>
+            <field name="url">/customer-reviews</field>
+            <field name="view_id" ref="dx_reviews_content"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="website_indexed" eval="True"/>
+            <field name="is_published" eval="True"/>
+        </record>
+
+        <record id="dx_request_quote_page" model="website.page">
+            <field name="name">Request a Quote</field>
+            <field name="url">/request-quote</field>
+            <field name="view_id" ref="dx_request_quote_content"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="website_indexed" eval="True"/>
+            <field name="is_published" eval="True"/>
+        </record>
+    </data>
+</odoo>

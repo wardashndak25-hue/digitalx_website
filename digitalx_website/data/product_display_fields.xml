@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="field_product_template_x_website_subtitle" model="ir.model.fields">
+            <field name="name">x_website_subtitle</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="field_description">Short Subtitle</field>
+            <field name="translate" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_product_template_x_website_brand_name" model="ir.model.fields">
+            <field name="name">x_website_brand_name</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="field_description">Brand Name</field>
+            <field name="translate" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_product_template_x_website_brand_logo" model="ir.model.fields">
+            <field name="name">x_website_brand_logo</field>
+            <field name="ttype">binary</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="field_description">Brand Logo</field>
+        </record>
+
+        <record id="field_product_template_x_website_manual_label" model="ir.model.fields">
+            <field name="name">x_website_manual_label</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="field_description">Manual Label</field>
+            <field name="translate" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_product_template_x_website_manual_url" model="ir.model.fields">
+            <field name="name">x_website_manual_url</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="field_description">Manual URL</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_product_template_x_website_support_text" model="ir.model.fields">
+            <field name="name">x_website_support_text</field>
+            <field name="ttype">text</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="field_description">Support Text</field>
+            <field name="translate" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_product_template_x_website_warranty_text" model="ir.model.fields">
+            <field name="name">x_website_warranty_text</field>
+            <field name="ttype">text</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="field_description">Warranty Text</field>
+            <field name="translate" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+    </data>
+</odoo>

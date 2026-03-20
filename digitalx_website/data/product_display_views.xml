@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_product_template_form_dx_website_details" model="ir.ui.view">
+            <field name="name">product.template.form.dx.website.details</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="website_sale.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='sales']" position="after">
+                    <page string="Website Product Details" name="dx_website_product_details" invisible="not sale_ok">
+                        <notebook>
+                            <page string="Website Content">
+                                <group col="1">
+                                    <group string="Header Area" col="1">
+                                        <field name="x_website_subtitle" placeholder="Short subtitle under the product name"/>
+                                        <label for="description_ecommerce" string="Header Website Description"/>
+                                        <field name="description_ecommerce"
+                                               widget="html"
+                                               nolabel="1"
+                                               placeholder="Shown under the product title on the website"/>
+                                    </group>
+                                    <group string="Description Tab" col="1">
+                                        <label for="website_description" string="Description Tab Content"/>
+                                        <field name="website_description"
+                                               widget="html"
+                                               nolabel="1"
+                                               placeholder="Shown in the lower Description tab on the product page"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Brand and Support">
+                                <group col="2">
+                                    <group string="Brand Presentation" col="1">
+                                        <field name="x_website_brand_name" placeholder="Brand name"/>
+                                        <field name="x_website_brand_logo"
+                                               widget="image"
+                                               class="oe_avatar"
+                                               options="{'preview_image': 'x_website_brand_logo'}"/>
+                                    </group>
+                                    <group string="Support and Warranty" col="1">
+                                        <field name="x_website_support_text" placeholder="Support message displayed on the product page"/>
+                                        <field name="x_website_warranty_text" placeholder="Warranty message displayed on the product page"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Stock Display">
+                                <group string="Stock Messaging" col="2">
+                                    <field name="allow_out_of_stock_order" invisible="not is_storable"/>
+                                    <field name="show_availability" invisible="not is_storable"/>
+                                    <field name="available_threshold" invisible="not is_storable or not show_availability"/>
+                                    <field name="out_of_stock_message" widget="html" invisible="not is_storable"/>
+                                </group>
+                            </page>
+                            <page string="Website Documents">
+                                <group col="1">
+                                    <div class="text-muted">
+                                        Add either a binary PDF file or a direct URL, then enable Publish on website so the document appears on the product page.
+                                    </div>
+                                    <div class="text-muted">
+                                        Each document row supports one source only. If you want both a PDF and a web link, create two separate document rows.
+                                    </div>
+                                </group>
+                                <field name="product_document_ids"
+                                       nolabel="1"
+                                       mode="list,form"
+                                       context="{
+                                           'default_res_model': 'product.template',
+                                           'default_res_id': id,
+                                           'default_attached_on_sale': 'hidden',
+                                           'default_shown_on_product_page': True,
+                                           'form_view_ref': 'website_sale.product_document_form',
+                                           'list_view_ref': 'website_sale.product_document_list'
+                                       }"/>
+                            </page>
+                        </notebook>
+                    </page>
+                </xpath>
+                <xpath expr="//group[@name='ecom_description']" position="after">
+                    <group string="Website Overview" name="dx_website_overview" invisible="not sale_ok">
+                        <field name="website_description"
+                               nolabel="1"
+                               colspan="2"
+                               placeholder="Full overview shown in the lower description section of the product page"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

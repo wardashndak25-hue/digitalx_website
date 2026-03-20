@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="model_x_digitalx_shop_nav_item" model="ir.model">
+            <field name="model">x_digitalx_shop_nav_item</field>
+            <field name="name">Shop Category Navigation Item</field>
+        </record>
+
+        <record id="field_x_digitalx_shop_nav_item_name" model="ir.model.fields">
+            <field name="name">x_name</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_shop_nav_item"/>
+            <field name="field_description">Name</field>
+            <field name="required" eval="True"/>
+            <field name="translate" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_shop_nav_item_sequence" model="ir.model.fields">
+            <field name="name">x_sequence</field>
+            <field name="ttype">integer</field>
+            <field name="model_id" ref="model_x_digitalx_shop_nav_item"/>
+            <field name="field_description">Sequence</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_shop_nav_item_active" model="ir.model.fields">
+            <field name="name">x_active</field>
+            <field name="ttype">boolean</field>
+            <field name="model_id" ref="model_x_digitalx_shop_nav_item"/>
+            <field name="field_description">Active</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_shop_nav_item_parent_id" model="ir.model.fields">
+            <field name="name">x_parent_id</field>
+            <field name="ttype">many2one</field>
+            <field name="model_id" ref="model_x_digitalx_shop_nav_item"/>
+            <field name="relation">x_digitalx_shop_nav_item</field>
+            <field name="field_description">Parent Item</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_shop_nav_item_child_ids" model="ir.model.fields">
+            <field name="name">x_child_ids</field>
+            <field name="ttype">one2many</field>
+            <field name="model_id" ref="model_x_digitalx_shop_nav_item"/>
+            <field name="relation">x_digitalx_shop_nav_item</field>
+            <field name="relation_field">x_parent_id</field>
+            <field name="field_description">Child Items</field>
+            <field name="copied" eval="False"/>
+        </record>
+
+        <record id="field_x_digitalx_shop_nav_item_public_category_id" model="ir.model.fields">
+            <field name="name">x_public_category_id</field>
+            <field name="ttype">many2one</field>
+            <field name="model_id" ref="model_x_digitalx_shop_nav_item"/>
+            <field name="relation">product.public.category</field>
+            <field name="field_description">Linked Website Category</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_shop_nav_item_description" model="ir.model.fields">
+            <field name="name">x_description</field>
+            <field name="ttype">text</field>
+            <field name="model_id" ref="model_x_digitalx_shop_nav_item"/>
+            <field name="field_description">Description</field>
+            <field name="translate" eval="True"/>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_shop_nav_item_image" model="ir.model.fields">
+            <field name="name">x_image</field>
+            <field name="ttype">binary</field>
+            <field name="model_id" ref="model_x_digitalx_shop_nav_item"/>
+            <field name="field_description">Navigation Image</field>
+        </record>
+
+        <record id="field_x_digitalx_shop_nav_item_accent_color" model="ir.model.fields">
+            <field name="name">x_accent_color</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_shop_nav_item"/>
+            <field name="field_description">Accent Color</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="field_x_digitalx_shop_nav_item_text_color" model="ir.model.fields">
+            <field name="name">x_text_color</field>
+            <field name="ttype">char</field>
+            <field name="model_id" ref="model_x_digitalx_shop_nav_item"/>
+            <field name="field_description">Custom Text Color</field>
+            <field name="copied" eval="True"/>
+        </record>
+
+        <record id="access_x_digitalx_shop_nav_item_public" model="ir.model.access">
+            <field name="name">x_digitalx_shop_nav_item public read</field>
+            <field name="model_id" ref="model_x_digitalx_shop_nav_item"/>
+            <field name="group_id" ref="base.group_public"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_x_digitalx_shop_nav_item_portal" model="ir.model.access">
+            <field name="name">x_digitalx_shop_nav_item portal read</field>
+            <field name="model_id" ref="model_x_digitalx_shop_nav_item"/>
+            <field name="group_id" ref="base.group_portal"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_x_digitalx_shop_nav_item_user" model="ir.model.access">
+            <field name="name">x_digitalx_shop_nav_item user full</field>
+            <field name="model_id" ref="model_x_digitalx_shop_nav_item"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+    </data>
+</odoo>

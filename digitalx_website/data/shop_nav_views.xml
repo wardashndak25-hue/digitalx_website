@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_x_digitalx_shop_nav_item_tree" model="ir.ui.view">
+            <field name="name">x_digitalx_shop_nav_item.tree</field>
+            <field name="model">x_digitalx_shop_nav_item</field>
+            <field name="arch" type="xml">
+                <list string="Shop Category Navigation" default_order="x_sequence, id">
+                    <field name="x_sequence" widget="handle"/>
+                    <field name="x_name"/>
+                    <field name="x_parent_id"/>
+                    <field name="x_public_category_id"/>
+                    <field name="x_active"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_x_digitalx_shop_nav_item_form" model="ir.ui.view">
+            <field name="name">x_digitalx_shop_nav_item.form</field>
+            <field name="model">x_digitalx_shop_nav_item</field>
+            <field name="arch" type="xml">
+                <form string="Shop Category Navigation Item">
+                    <sheet>
+                        <field name="x_image" widget="image" class="oe_avatar" options="{'preview_image': 'x_image'}"/>
+                        <div class="oe_title">
+                            <label for="x_name"/>
+                            <h1>
+                                <field name="x_name" placeholder="Navigation item name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="x_sequence"/>
+                                <field name="x_active"/>
+                                <field name="x_parent_id" domain="[('id', '!=', id)]" placeholder="Leave empty for a main category"/>
+                            </group>
+                            <group>
+                                <field name="x_public_category_id" placeholder="Link to a website category"/>
+                                <field name="x_accent_color" widget="dx_color_value" placeholder="#0C6FBB"/>
+                                <field name="x_text_color" widget="dx_color_value" placeholder="#0F172A"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="x_description" placeholder="Optional description for dropdown and mobile cards"/>
+                        </group>
+                        <notebook>
+                            <page string="Child Items">
+                                <field name="x_child_ids" context="{'default_x_parent_id': id, 'default_x_active': True}">
+                                    <list editable="bottom" default_order="x_sequence, id">
+                                        <field name="x_sequence"/>
+                                        <field name="x_name"/>
+                                        <field name="x_public_category_id"/>
+                                        <field name="x_active"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_x_digitalx_shop_nav_item" model="ir.actions.act_window">
+            <field name="name">Shop Category Navigation</field>
+            <field name="res_model">x_digitalx_shop_nav_item</field>
+            <field name="view_mode">list,form</field>
+            <field name="context" eval="{'default_x_active': True}"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a category navigation item
+                </p>
+                <p>
+                    Build the shop navigation tree, control its order and appearance, and link each item to the real website category.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_x_digitalx_shop_nav_item_tree_view" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="view_x_digitalx_shop_nav_item_tree"/>
+            <field name="act_window_id" ref="action_x_digitalx_shop_nav_item"/>
+        </record>
+
+        <record id="action_x_digitalx_shop_nav_item_form_view" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_x_digitalx_shop_nav_item_form"/>
+            <field name="act_window_id" ref="action_x_digitalx_shop_nav_item"/>
+        </record>
+
+        <menuitem
+            id="menu_x_digitalx_shop_nav_item"
+            name="Shop Category Navigation"
+            parent="website.menu_website_global_configuration"
+            action="action_x_digitalx_shop_nav_item"
+            groups="base.group_system"
+            sequence="31"/>
+    </data>
+</odoo>

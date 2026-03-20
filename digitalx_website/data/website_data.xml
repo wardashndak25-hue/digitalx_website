@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="website.default_website" model="website">
+            <field name="name">Craik &amp; Comfort Bathroom Design</field>
+            <field name="social_facebook">https://www.facebook.com/share/181Na7NuM9/?mibextid=wwXIfr</field>
+            <field name="social_instagram">https://www.instagram.com/craick_comfort/</field>
+        </record>
+
+        <record id="menu_shop" model="website.menu">
+            <field name="name">Renovation</field>
+            <field name="url">/bathroom-renovation-dublin</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="menu_categories" model="website.menu">
+            <field name="name">Design Service</field>
+            <field name="url">/bathroom-design-dublin</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="menu_new_arrivals" model="website.menu">
+            <field name="name">Supply &amp; Shop</field>
+            <field name="url">/bathroom-supply-shop</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="group_ids" eval="[(5, 0, 0)]"/>
+            <field name="sequence">30</field>
+        </record>
+
+        <record id="menu_supply_all_products" model="website.menu">
+            <field name="name">All Products</field>
+            <field name="url">/shop</field>
+            <field name="parent_id" ref="menu_new_arrivals"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">1</field>
+        </record>
+
+        <record id="menu_supply_besco" model="website.menu">
+            <field name="name">Besco Products</field>
+            <field name="url">/besco-bathroom-products</field>
+            <field name="parent_id" ref="menu_new_arrivals"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">2</field>
+        </record>
+
+        <record id="menu_cat_cameras" model="website.menu">
+            <field name="name">Washbasins</field>
+            <field name="url">/shop?search=Washbasins</field>
+            <field name="parent_id" ref="menu_new_arrivals"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">3</field>
+        </record>
+
+        <record id="menu_cat_networking" model="website.menu">
+            <field name="name">Faucets</field>
+            <field name="url">/shop?search=Faucets</field>
+            <field name="parent_id" ref="menu_new_arrivals"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">4</field>
+        </record>
+
+        <record id="menu_cat_access" model="website.menu">
+            <field name="name">Shower Trays</field>
+            <field name="url">/shop?search=Shower+Trays</field>
+            <field name="parent_id" ref="menu_new_arrivals"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">5</field>
+        </record>
+
+        <record id="menu_cat_alarm" model="website.menu">
+            <field name="name">Shower Enclosures</field>
+            <field name="url">/shop?search=Shower+Enclosures</field>
+            <field name="parent_id" ref="menu_new_arrivals"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">6</field>
+        </record>
+
+        <record id="menu_cat_intercom" model="website.menu">
+            <field name="name">Bathtubs</field>
+            <field name="url">/shop?search=Bathtubs</field>
+            <field name="parent_id" ref="menu_new_arrivals"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">7</field>
+        </record>
+
+        <record id="menu_cat_backend" model="website.menu">
+            <field name="name">Bathtub Screens</field>
+            <field name="url">/shop?search=Bathtub+Screens</field>
+            <field name="parent_id" ref="menu_new_arrivals"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">8</field>
+        </record>
+
+        <record id="menu_about" model="website.menu">
+            <field name="name">About</field>
+            <field name="url">/about</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">50</field>
+        </record>
+
+        <record id="menu_company_parent" model="website.menu">
+            <field name="name">Projects</field>
+            <field name="url">/before-after-projects</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">40</field>
+        </record>
+
+        <record id="menu_company_about" model="website.menu">
+            <field name="name">Before &amp; After Projects</field>
+            <field name="url">/before-after-projects</field>
+            <field name="parent_id" ref="menu_company_parent"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">1</field>
+        </record>
+
+        <record id="menu_company_info" model="website.menu">
+            <field name="name">Project Organisation</field>
+            <field name="url">/bathroom-project-organisation</field>
+            <field name="parent_id" ref="menu_company_parent"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">2</field>
+        </record>
+
+        <record id="menu_company_partners" model="website.menu">
+            <field name="name">Customer Reviews</field>
+            <field name="url">/customer-reviews</field>
+            <field name="parent_id" ref="menu_company_parent"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">3</field>
+        </record>
+
+        <record id="menu_company_warranty" model="website.menu">
+            <field name="name">Request a Quote</field>
+            <field name="url">/request-quote</field>
+            <field name="parent_id" ref="menu_company_parent"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">4</field>
+        </record>
+
+        <record id="menu_contact" model="website.menu">
+            <field name="name">Contact</field>
+            <field name="url">/contactus</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence">60</field>
+        </record>
+    </data>
+</odoo>

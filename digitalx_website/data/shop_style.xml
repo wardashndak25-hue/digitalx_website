@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="dx_shop_styles" name="DX Shop Page Styles" inherit_id="website.layout" priority="100">
+            <xpath expr="//head" position="inside">
+                <style>
+                    .dx-shop-nav-shell{margin:0 0 1.5rem;padding:12px;border:1px solid rgba(33,37,41,.08);border-radius:28px;background:linear-gradient(180deg,#ffffff 0%,var(--dx-ivory) 100%);box-shadow:0 24px 60px -46px rgba(33,37,41,.18);position:relative;z-index:3;overflow:visible}
+                    .dx-shop-nav-row{display:flex;align-items:flex-start;flex-wrap:wrap;gap:10px;position:relative;overflow:visible}
+                    .dx-shop-nav-all,.dx-shop-nav-link{display:inline-flex;align-items:center;gap:10px;min-height:58px;padding:0 18px;border-radius:18px;background:rgba(255,255,255,.82);color:var(--dx-charcoal)!important;font-size:14px;font-weight:800;text-decoration:none!important;white-space:nowrap;border:1px solid rgba(33,37,41,.06);transition:background .2s ease,color .2s ease,box-shadow .2s ease,transform .2s ease}
+                    .dx-shop-nav-all:hover,.dx-shop-nav-link:hover,.dx-shop-nav-item:hover .dx-shop-nav-link,.dx-shop-nav-all.is-active,.dx-shop-nav-item.is-active .dx-shop-nav-link{color:var(--dx-shop-nav-text,var(--dx-primary,#c0392b))!important;background:#fff;box-shadow:inset 0 -3px 0 var(--dx-shop-accent,var(--dx-primary,#c0392b));transform:translateY(-1px)}
+                    .dx-shop-nav-label,.dx-shop-mobile-label,.dx-shop-mobile-sublabel,.dx-shop-mobile-leaf-label,.dx-shop-leaf-label,.dx-shop-subcard-label{display:inline-block!important;opacity:1!important;visibility:visible!important;color:inherit!important;font-size:inherit!important;line-height:1.35!important;text-indent:0!important;white-space:normal!important}
+                    .dx-shop-nav-swatch{width:10px;height:10px;border-radius:999px;background:var(--dx-shop-accent,var(--dx-primary,#c0392b));box-shadow:0 0 0 4px rgba(255,255,255,.78),0 0 0 1px rgba(33,37,41,.08);flex:0 0 auto}
+                    .dx-shop-nav-item{--dx-shop-accent:var(--dx-primary,#c0392b);--dx-shop-nav-text:var(--dx-charcoal);position:static;display:inline-flex;align-items:stretch;gap:6px}
+                    .dx-shop-nav-item.dropdown .dropdown-toggle::after{display:none!important}
+                    .dx-shop-nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:42px;min-width:42px;border:1px solid rgba(33,37,41,.06);border-radius:16px;background:rgba(255,255,255,.72);color:var(--dx-shop-nav-text,var(--dx-charcoal));transition:background .2s ease,color .2s ease,transform .2s ease}
+                    .dx-shop-nav-toggle:hover,.dx-shop-nav-item.show .dx-shop-nav-toggle,.dx-shop-nav-item:hover .dx-shop-nav-toggle,.dx-shop-nav-item.is-active .dx-shop-nav-toggle{background:#fff;color:var(--dx-shop-accent,#c0392b);box-shadow:inset 0 0 0 1px var(--dx-shop-accent,#c0392b)}
+                    .dx-shop-nav-item.show .dx-shop-nav-toggle .fa,.dx-shop-nav-item:hover .dx-shop-nav-toggle .fa{transform:rotate(180deg)}
+                    .dx-shop-nav-toggle .fa{transition:transform .2s ease}
+                    .dx-shop-mega{inset-inline:0!important;top:calc(100% + 12px);width:100%;max-width:100%;margin-top:0;padding:18px;border:1px solid rgba(33,37,41,.08);border-radius:24px;background:rgba(255,255,255,.98);box-shadow:0 28px 70px -34px rgba(33,37,41,.18)}
+                    .dx-shop-nav-item:hover .dx-shop-mega,.dx-shop-nav-item .dx-shop-mega.show{display:block}
+                    .dx-shop-mega-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:16px}
+                    .dx-shop-mega-kicker{display:inline-flex;align-items:center;gap:8px;color:var(--dx-shop-accent,#c0392b);font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase}
+                    .dx-shop-mega-title{display:inline-flex;align-items:center;gap:8px;color:var(--dx-charcoal)!important;font-size:20px;font-weight:800;text-decoration:none!important}
+                    .dx-shop-mega-title:hover{color:var(--dx-shop-accent,#c0392b)!important}
+                    .dx-shop-mega-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+                    .dx-shop-subcard{min-height:100%;padding:16px;border:1px solid rgba(33,37,41,.08);border-radius:20px;background:linear-gradient(180deg,#ffffff 0%,var(--dx-ivory) 100%);box-shadow:0 10px 26px -22px rgba(33,37,41,.12)}
+                    .dx-shop-subcard-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px}
+                    .dx-shop-subcard-thumb{width:54px;height:54px;object-fit:cover;border-radius:16px;flex:0 0 auto}
+                    .dx-shop-subcard-mark{width:54px;height:54px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.94) 0%,rgba(245,240,233,.88) 100%);border:1px solid rgba(33,37,41,.08);display:inline-flex;align-items:center;justify-content:center;color:var(--dx-shop-accent,#c0392b);font-size:18px;font-weight:800;flex:0 0 auto}
+                    .dx-shop-subcard-link{display:inline-flex;align-items:center;gap:10px;color:var(--dx-charcoal)!important;font-size:15px;font-weight:800;text-decoration:none!important}
+                    .dx-shop-subcard-link:hover{color:var(--dx-shop-accent,#c0392b)!important}
+                    .dx-shop-subcard-desc{margin:0 0 12px;color:var(--dx-copy);font-size:13px;line-height:1.7}
+                    .dx-shop-leaf-list{display:flex;flex-wrap:wrap;gap:8px}
+                    .dx-shop-leaf-link{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.88);border:1px solid rgba(33,37,41,.06);color:var(--dx-copy)!important;font-size:12px;font-weight:700;text-decoration:none!important;transition:background .2s ease,color .2s ease,box-shadow .2s ease}
+                    .dx-shop-leaf-link:hover,.dx-shop-leaf-link.is-active{background:#fff;color:var(--dx-shop-accent,#c0392b)!important;box-shadow:inset 0 0 0 1px var(--dx-shop-accent,#c0392b)}
+                    .dx-shop-mobile-nav{display:none}
+                    .dx-shop-mobile-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border:1px solid rgba(33,37,41,.08);border-radius:22px;background:linear-gradient(180deg,#ffffff 0%,var(--dx-ivory) 100%);color:var(--dx-charcoal);font-size:15px;font-weight:800;box-shadow:0 16px 42px -34px rgba(33,37,41,.18)}
+                    .dx-shop-mobile-panel{margin-top:12px;padding:10px;border:1px solid rgba(33,37,41,.08);border-radius:24px;background:linear-gradient(180deg,#ffffff 0%,var(--dx-ivory) 100%);box-shadow:0 18px 48px -38px rgba(33,37,41,.18)}
+                    .dx-shop-mobile-all{margin-bottom:10px}
+                    .dx-shop-mobile-card{--dx-shop-accent:var(--dx-primary,#c0392b);--dx-shop-nav-text:var(--dx-charcoal);margin-bottom:10px;padding:12px;border:1px solid rgba(33,37,41,.08);border-radius:20px;background:#fff;box-shadow:0 12px 28px -24px rgba(33,37,41,.16)}
+                    .dx-shop-mobile-card:last-child{margin-bottom:0}
+                    .dx-shop-mobile-card-head,.dx-shop-mobile-subhead{display:flex;align-items:center;justify-content:space-between;gap:10px}
+                    .dx-shop-mobile-link,.dx-shop-mobile-sublink{min-width:0;flex:1 1 auto;display:inline-flex;align-items:center;gap:10px;color:var(--dx-shop-nav-text,#212529)!important;font-size:14px;font-weight:800;text-decoration:none!important}
+                    .dx-shop-mobile-link:hover,.dx-shop-mobile-sublink:hover{color:var(--dx-shop-accent,#c0392b)!important}
+                    .dx-shop-mobile-toggle{width:38px;height:38px;flex:0 0 auto;border:1px solid rgba(33,37,41,.08);border-radius:14px;background:rgba(255,255,255,.86);color:var(--dx-shop-accent,#c0392b)}
+                    .dx-shop-mobile-subtree{display:grid;gap:10px;padding-top:12px}
+                    .dx-shop-mobile-subcard{padding:12px;border:1px solid rgba(33,37,41,.08);border-radius:18px;background:linear-gradient(180deg,#ffffff 0%,var(--dx-ivory) 100%)}
+                    .dx-shop-mobile-desc{margin:8px 0 0;color:var(--dx-copy);font-size:12px;line-height:1.7}
+                    .dx-shop-mobile-leafs{display:grid;gap:8px;padding-top:10px}
+                    .dx-shop-mobile-leaf{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.88);border:1px solid rgba(33,37,41,.06);color:var(--dx-copy)!important;font-size:12px;font-weight:700;text-decoration:none!important}
+                    .dx-shop-mobile-leaf:hover,.dx-shop-mobile-leaf.is-active{color:var(--dx-shop-accent,#c0392b)!important;box-shadow:inset 0 0 0 1px var(--dx-shop-accent,#c0392b)}
+                    @media (max-width:991px){.dx-shop-nav-shell{display:none}.dx-shop-mobile-nav{display:block;margin-bottom:1rem}}
+                    @media (max-width:1199px){.dx-shop-mega-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+                    @media (max-width:575px){.dx-shop-mobile-trigger{padding:14px 16px;border-radius:20px}.dx-shop-mobile-panel{border-radius:22px}.dx-shop-mobile-card,.dx-shop-mobile-subcard{border-radius:18px}}
+                    .products_attributes_filters .accordion-button,.products_attributes_filters .accordion-button:not(.collapsed),#o_wsale_price_range_option .accordion-button,#o_wsale_price_range_option .accordion-button:not(.collapsed){color:var(--dx-charcoal)!important;font-weight:800;box-shadow:none}
+                    .products_attributes_filters .form-check-input:checked,.products_attributes_filters .form-check-input:focus,#o_wsale_price_range_option .form-check-input:checked,#o_wsale_price_range_option .form-check-input:focus{background-color:var(--dx-primary,#c0392b)!important;border-color:var(--dx-primary,#c0392b)!important;box-shadow:0 0 0 .2rem rgba(192,57,43,.12)!important}
+                    .products_attributes_filters .css_attribute_color,.o_wsale_offcanvas .css_attribute_color{--o-wsale-css-attribute-color__size:1.9rem;border:1px solid rgba(33,37,41,.18)!important;box-shadow:inset 0 0 0 2px rgba(255,255,255,.92),0 10px 24px -18px rgba(33,37,41,.28);background-position:center;background-size:cover}
+                    .products_attributes_filters .css_attribute_color:hover,.o_wsale_offcanvas .css_attribute_color:hover{transform:translateY(-1px);border-color:rgba(33,37,41,.32)!important}
+                    .products_attributes_filters .css_attribute_color.active,.products_attributes_filters .css_attribute_color.active:hover,.o_wsale_offcanvas .css_attribute_color.active,.o_wsale_offcanvas .css_attribute_color.active:hover{border-color:var(--dx-primary,#c0392b)!important;box-shadow:inset 0 0 0 2px rgba(255,255,255,.96),0 0 0 3px rgba(192,57,43,.22),0 10px 24px -18px rgba(33,37,41,.28)}
+                    .products_attributes_filters .css_attribute_color.transparent,.o_wsale_offcanvas .css_attribute_color.transparent{background-size:cover}
+                    #o_wsale_price_range_option .form-range::-webkit-slider-thumb{background:var(--dx-primary,#c0392b)}
+                    #o_wsale_price_range_option .form-range::-moz-range-thumb{background:var(--dx-primary,#c0392b);border-color:var(--dx-primary,#c0392b)}
+                    #o_wsale_price_range_option .form-range::-webkit-slider-runnable-track{background:linear-gradient(90deg,rgba(192,57,43,.22),rgba(192,57,43,.08))}
+                    #o_wsale_price_range_option .form-range::-moz-range-track{background:linear-gradient(90deg,rgba(192,57,43,.22),rgba(192,57,43,.08))}
+                    .oe_product_cart{background:white;border-radius:16px;overflow:hidden;border:1px solid #e5e7eb;transition:all .3s ease;display:flex!important;flex-direction:column!important;height:auto!important;padding:0!important;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+                    .oe_product_cart:hover{box-shadow:0 8px 25px -5px rgba(0,0,0,.12);transform:translateY(-2px);border-color:var(--dx-primary,#c0392b)}
+                    .oe_product_image{overflow:hidden;border-radius:16px 16px 0 0}
+                    .oe_product_image img{transition:transform .3s ease}
+                    .oe_product_cart:hover .oe_product_image img{transform:scale(1.05)}
+                    .o_wsale_product_information{padding:12px 16px!important}
+                    .o_wsale_product_information_text{width:100%}
+                    .o_wsale_products_item_title{margin-bottom:.85rem!important;text-align:center}
+                    .oe_product_cart .o_wsale_products_item_title a,
+                    .oe_product_cart .o_wsale_products_item_title a:hover{color:var(--dx-primary,#c0392b)!important;font-weight:700!important}
+                    .oe_product_cart .product_price,
+                    .oe_product_cart .product_price .h6,
+                    .oe_product_cart .product_price .oe_price,
+                    .oe_product_cart .product_price .monetary_field{color:var(--dx-gray-900,#111827)!important;font-weight:800!important}
+                    .o_wsale_product_sub{display:flex!important;flex-direction:column-reverse!important;align-items:center!important;justify-content:center!important;gap:12px!important}
+                    .o_wsale_product_btn{width:100%;display:flex!important;align-items:center;justify-content:center;gap:10px!important}
+                    .o_wsale_product_btn .btn{width:52px;height:52px;display:inline-flex;align-items:center;justify-content:center;border-radius:14px!important;border:1px solid rgba(192,57,43,.18)!important;background:var(--dx-ivory)!important;color:var(--dx-dark,#212529)!important;box-shadow:0 8px 20px -18px rgba(33,37,41,.18)}
+                    .o_wsale_product_btn .btn:hover{background:var(--dx-primary,#c0392b)!important;border-color:var(--dx-primary,#c0392b)!important;color:#fff!important}
+                    .o_wsale_product_sub .product_price{text-align:center;width:100%}
+                    .o_wsale_product_sub .product_price .h6,.o_wsale_product_sub .product_price .oe_price,.o_wsale_product_sub .product_price .monetary_field{color:var(--dx-gray-900,#111827)!important;font-weight:800!important}
+                    .oe_product .oe_subdescription{display:none!important}
+                    .o_wsale_products_grid_table_wrapper .o_wsale_products_grid_before{margin-bottom:1rem}
+                    #products_grid .oe_product.h-100,#products_grid .oe_product_cart.h-100,#products_grid .o_wsale_products_item.h-100{height:auto!important;min-height:0!important}
+                    #products_grid .oe_product,#products_grid .o_wsale_products_item{align-self:flex-start}
+                    #o_wsale_products_grid .o_wsale_product_grid_wrapper.h-100{height:auto!important}
+                    #o_wsale_products_grid.o_wsale_products_opt_design_grid,#o_wsale_products_grid.o_wsale_products_opt_design_cards{--o-wsale-card-height:auto!important}
+                    #o_wsale_products_grid .oe_product_cart{height:auto!important;align-self:flex-start}
+                    #o_wsale_products_grid .o_wsale_product_information.flex-grow-1{flex:0 0 auto!important;flex-grow:0!important;min-height:0!important}
+                    .btn-primary,.btn-primary:focus{background-color:var(--dx-primary,#c0392b)!important;border-color:var(--dx-primary,#c0392b)!important}
+                    .btn-primary:hover{background-color:var(--dx-primary-hover,#9a2e22)!important;border-color:var(--dx-primary-hover,#9a2e22)!important}
+                    a.text-primary,.text-primary{color:var(--dx-primary,#c0392b)!important}
+                    .o_wsale_filmstrip_container,.o_carousel_product_outer{border-radius:16px;overflow:hidden}
+                    #product_detail .product_price .oe_price{color:var(--dx-primary,#c0392b)!important;font-weight:700!important;font-size:28px!important}
+                    #product_detail .css_quantity .btn{border-radius:8px!important}
+                    #product_detail #add_to_cart,#product_detail .a-submit{border-radius:8px!important;font-weight:600!important;padding:12px 24px!important}
+                </style>
+            </xpath>
+        </template>
+
+        <template id="dx_shop_category_bar" name="DX Shop Category Bar">
+            <t t-set="dx_shop_nav_roots" t-value="request.env['x_digitalx_shop_nav_item'].sudo().search([('x_parent_id', '=', False), ('x_active', '=', True)], order='x_sequence asc, id asc')"/>
+            <t t-if="dx_shop_nav_roots">
+                <div class="dx-shop-nav-shell d-none d-lg-block">
+                    <div class="dx-shop-nav-row">
+                        <a t-att-href="keep('/shop', category=0)" t-attf-class="dx-shop-nav-all {{not category and 'is-active' or ''}}">
+                            <span class="dx-shop-nav-swatch"></span>
+                            <span class="dx-shop-nav-label">All Products</span>
+                        </a>
+                        <t t-foreach="dx_shop_nav_roots" t-as="item">
+                            <t t-set="item_children" t-value="request.env['x_digitalx_shop_nav_item'].sudo().search([('x_parent_id', '=', item.id), ('x_active', '=', True)], order='x_sequence asc, id asc')"/>
+                            <t t-set="item_name_key" t-value="(item.x_name or '').strip()"/>
+                            <t t-set="item_parent_key" t-value="item.x_parent_id and (item.x_parent_id.x_name or '').strip() or False"/>
+                            <t t-set="item_category" t-value="item.x_public_category_id or request.env['product.public.category'].sudo().search(item_parent_key and [('name', 'ilike', item_name_key), ('parent_id.name', 'ilike', item_parent_key)] or [('name', 'ilike', item_name_key), ('parent_id', '=', False)], limit=1, order='sequence asc, id asc')"/>
+                            <t t-set="item_url" t-value="item_category and keep('/shop/category/' + slug(item_category), category=0) or keep('/shop', category=0)"/>
+                            <t t-set="item_label" t-value="item_name_key or (item_category and item_category.name) or ((item.display_name or '').strip()) or 'Collection'"/>
+                            <t t-set="item_active" t-value="category and item_category and item_category.id in category.parents_and_self.ids"/>
+                            <t t-set="item_accent" t-value="(item.x_accent_color or '').strip() or 'var(--dx-primary)'"/>
+                            <t t-set="item_text" t-value="(item.x_text_color or '').strip() or 'var(--dx-charcoal)'"/>
+                            <div t-attf-class="dx-shop-nav-item dropdown {{item_active and 'is-active' or ''}}" t-att-style="'--dx-shop-accent:%s;--dx-shop-nav-text:%s;' % (item_accent, item_text)">
+                                <a t-att-href="item_url" class="dx-shop-nav-link">
+                                    <span class="dx-shop-nav-swatch"></span>
+                                    <span class="dx-shop-nav-label" t-esc="item_label"/>
+                                </a>
+                                <button t-if="item_children" class="dx-shop-nav-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                    <span class="fa fa-angle-down" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Open submenu</span>
+                                </button>
+                                <div t-if="item_children" class="dropdown-menu dx-shop-mega">
+                                    <div class="dx-shop-mega-head">
+                                        <div>
+                                            <div class="dx-shop-mega-kicker">
+                                                <span class="dx-shop-nav-swatch"></span>
+                                                <span>Explore Collection</span>
+                                            </div>
+                                            <a t-att-href="item_url" class="dx-shop-mega-title">
+                                                <span t-esc="item_label"/>
+                                                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="dx-shop-mega-grid">
+                                        <t t-foreach="item_children" t-as="child">
+                                            <t t-set="child_children" t-value="request.env['x_digitalx_shop_nav_item'].sudo().search([('x_parent_id', '=', child.id), ('x_active', '=', True)], order='x_sequence asc, id asc')"/>
+                                            <t t-set="child_name_key" t-value="(child.x_name or '').strip()"/>
+                                            <t t-set="child_parent_key" t-value="child.x_parent_id and (child.x_parent_id.x_name or '').strip() or False"/>
+                                            <t t-set="child_category" t-value="child.x_public_category_id or request.env['product.public.category'].sudo().search(child_parent_key and [('name', 'ilike', child_name_key), ('parent_id.name', 'ilike', child_parent_key)] or [('name', 'ilike', child_name_key), ('parent_id', '=', False)], limit=1, order='sequence asc, id asc')"/>
+                                            <t t-set="child_url" t-value="child_category and keep('/shop/category/' + slug(child_category), category=0) or item_url"/>
+                                            <t t-set="child_label" t-value="child_name_key or (child_category and child_category.name) or ((child.display_name or '').strip()) or 'Category'"/>
+                                            <t t-set="child_accent" t-value="(child.x_accent_color or '').strip() or item_accent"/>
+                                            <t t-set="child_text" t-value="(child.x_text_color or '').strip() or item_text"/>
+                                            <div class="dx-shop-subcard" t-att-style="'--dx-shop-accent:%s;--dx-shop-nav-text:%s;' % (child_accent, child_text)">
+                                                <div class="dx-shop-subcard-head">
+                                                    <t t-if="child.x_image">
+                                                        <img t-attf-src="/web/image/x_digitalx_shop_nav_item/{{ child.id }}/x_image" t-att-alt="child_label" class="dx-shop-subcard-thumb"/>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span class="dx-shop-subcard-mark">
+                                                            <t t-esc="child_label[:1]"/>
+                                                        </span>
+                                                    </t>
+                                                    <div>
+                                                        <a t-att-href="child_url" class="dx-shop-subcard-link">
+                                                            <span class="dx-shop-subcard-label" t-esc="child_label"/>
+                                                        </a>
+                                                        <p t-if="child.x_description" class="dx-shop-subcard-desc" t-esc="child.x_description"/>
+                                                    </div>
+                                                </div>
+                                                <div t-if="child_children" class="dx-shop-leaf-list">
+                                                        <t t-foreach="child_children" t-as="leaf">
+                                                            <t t-set="leaf_name_key" t-value="(leaf.x_name or '').strip()"/>
+                                                            <t t-set="leaf_parent_key" t-value="leaf.x_parent_id and (leaf.x_parent_id.x_name or '').strip() or False"/>
+                                                            <t t-set="leaf_category" t-value="leaf.x_public_category_id or request.env['product.public.category'].sudo().search(leaf_parent_key and [('name', 'ilike', leaf_name_key), ('parent_id.name', 'ilike', leaf_parent_key)] or [('name', 'ilike', leaf_name_key), ('parent_id', '=', False)], limit=1, order='sequence asc, id asc')"/>
+                                                            <t t-set="leaf_url" t-value="leaf_category and keep('/shop/category/' + slug(leaf_category), category=0) or child_url"/>
+                                                            <t t-set="leaf_label" t-value="leaf_name_key or (leaf_category and leaf_category.name) or ((leaf.display_name or '').strip()) or 'Collection'"/>
+                                                            <t t-set="leaf_active" t-value="category and leaf_category and leaf_category.id == category.id"/>
+                                                            <a t-att-href="leaf_url" t-attf-class="dx-shop-leaf-link {{leaf_active and 'is-active' or ''}}">
+                                                                <span class="dx-shop-nav-swatch"></span>
+                                                                <span class="dx-shop-leaf-label" t-esc="leaf_label"/>
+                                                            </a>
+                                                        </t>
+                                                    </div>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+
+                <div class="dx-shop-mobile-nav d-lg-none">
+                    <button class="dx-shop-mobile-trigger" type="button" data-bs-toggle="collapse" data-bs-target="#dxShopMobileTree" aria-expanded="false" aria-controls="dxShopMobileTree">
+                        <span>Browse Categories</span>
+                        <span class="fa fa-angle-down" aria-hidden="true"></span>
+                    </button>
+                    <div class="collapse dx-shop-mobile-panel" id="dxShopMobileTree">
+                        <a t-att-href="keep('/shop', category=0)" t-attf-class="dx-shop-nav-all dx-shop-mobile-all {{not category and 'is-active' or ''}}">
+                            <span class="dx-shop-nav-swatch"></span>
+                            <span class="dx-shop-mobile-label">All Products</span>
+                        </a>
+                        <t t-foreach="dx_shop_nav_roots" t-as="item">
+                            <t t-set="item_children" t-value="request.env['x_digitalx_shop_nav_item'].sudo().search([('x_parent_id', '=', item.id), ('x_active', '=', True)], order='x_sequence asc, id asc')"/>
+                            <t t-set="item_name_key" t-value="(item.x_name or '').strip()"/>
+                            <t t-set="item_parent_key" t-value="item.x_parent_id and (item.x_parent_id.x_name or '').strip() or False"/>
+                            <t t-set="item_category" t-value="item.x_public_category_id or request.env['product.public.category'].sudo().search(item_parent_key and [('name', 'ilike', item_name_key), ('parent_id.name', 'ilike', item_parent_key)] or [('name', 'ilike', item_name_key), ('parent_id', '=', False)], limit=1, order='sequence asc, id asc')"/>
+                            <t t-set="item_url" t-value="item_category and keep('/shop/category/' + slug(item_category), category=0) or keep('/shop', category=0)"/>
+                            <t t-set="item_label" t-value="item_name_key or (item_category and item_category.name) or ((item.display_name or '').strip()) or 'Collection'"/>
+                            <t t-set="item_accent" t-value="(item.x_accent_color or '').strip() or 'var(--dx-primary)'"/>
+                            <t t-set="item_text" t-value="(item.x_text_color or '').strip() or 'var(--dx-charcoal)'"/>
+                            <div class="dx-shop-mobile-card" t-att-style="'--dx-shop-accent:%s;--dx-shop-nav-text:%s;' % (item_accent, item_text)">
+                                <div class="dx-shop-mobile-card-head">
+                                    <a t-att-href="item_url" class="dx-shop-mobile-link">
+                                        <span class="dx-shop-nav-swatch"></span>
+                                        <span class="dx-shop-mobile-label" t-esc="item_label"/>
+                                    </a>
+                                    <button t-if="item_children" class="dx-shop-mobile-toggle" type="button" data-bs-toggle="collapse" t-attf-data-bs-target="#dxShopMobileRoot{{ item.id }}" aria-expanded="false">
+                                        <span class="fa fa-angle-down" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Expand submenu</span>
+                                    </button>
+                                </div>
+                                <div t-if="item_children" class="collapse" t-attf-id="dxShopMobileRoot{{ item.id }}">
+                                    <div class="dx-shop-mobile-subtree">
+                                        <t t-foreach="item_children" t-as="child">
+                                            <t t-set="child_children" t-value="request.env['x_digitalx_shop_nav_item'].sudo().search([('x_parent_id', '=', child.id), ('x_active', '=', True)], order='x_sequence asc, id asc')"/>
+                                            <t t-set="child_name_key" t-value="(child.x_name or '').strip()"/>
+                                            <t t-set="child_parent_key" t-value="child.x_parent_id and (child.x_parent_id.x_name or '').strip() or False"/>
+                                            <t t-set="child_category" t-value="child.x_public_category_id or request.env['product.public.category'].sudo().search(child_parent_key and [('name', 'ilike', child_name_key), ('parent_id.name', 'ilike', child_parent_key)] or [('name', 'ilike', child_name_key), ('parent_id', '=', False)], limit=1, order='sequence asc, id asc')"/>
+                                            <t t-set="child_url" t-value="child_category and keep('/shop/category/' + slug(child_category), category=0) or item_url"/>
+                                            <t t-set="child_label" t-value="child_name_key or (child_category and child_category.name) or ((child.display_name or '').strip()) or 'Category'"/>
+                                            <t t-set="child_accent" t-value="(child.x_accent_color or '').strip() or item_accent"/>
+                                            <t t-set="child_text" t-value="(child.x_text_color or '').strip() or item_text"/>
+                                            <div class="dx-shop-mobile-subcard" t-att-style="'--dx-shop-accent:%s;--dx-shop-nav-text:%s;' % (child_accent, child_text)">
+                                                <div class="dx-shop-mobile-subhead">
+                                                    <a t-att-href="child_url" class="dx-shop-mobile-sublink">
+                                                        <span class="dx-shop-nav-swatch"></span>
+                                                        <span class="dx-shop-mobile-sublabel" t-esc="child_label"/>
+                                                    </a>
+                                                    <button t-if="child_children" class="dx-shop-mobile-toggle" type="button" data-bs-toggle="collapse" t-attf-data-bs-target="#dxShopMobileChild{{ child.id }}" aria-expanded="false">
+                                                        <span class="fa fa-angle-down" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Expand submenu</span>
+                                                    </button>
+                                                </div>
+                                                <p t-if="child.x_description" class="dx-shop-mobile-desc" t-esc="child.x_description"/>
+                                                <div t-if="child_children" class="collapse" t-attf-id="dxShopMobileChild{{ child.id }}">
+                                                    <div class="dx-shop-mobile-leafs">
+                                                        <t t-foreach="child_children" t-as="leaf">
+                                                            <t t-set="leaf_name_key" t-value="(leaf.x_name or '').strip()"/>
+                                                            <t t-set="leaf_parent_key" t-value="leaf.x_parent_id and (leaf.x_parent_id.x_name or '').strip() or False"/>
+                                                            <t t-set="leaf_category" t-value="leaf.x_public_category_id or request.env['product.public.category'].sudo().search(leaf_parent_key and [('name', 'ilike', leaf_name_key), ('parent_id.name', 'ilike', leaf_parent_key)] or [('name', 'ilike', leaf_name_key), ('parent_id', '=', False)], limit=1, order='sequence asc, id asc')"/>
+                                                            <t t-set="leaf_url" t-value="leaf_category and keep('/shop/category/' + slug(leaf_category), category=0) or child_url"/>
+                                                            <t t-set="leaf_label" t-value="leaf_name_key or (leaf_category and leaf_category.name) or ((leaf.display_name or '').strip()) or 'Collection'"/>
+                                                            <t t-set="leaf_active" t-value="category and leaf_category and leaf_category.id == category.id"/>
+                                                            <a t-att-href="leaf_url" t-attf-class="dx-shop-mobile-leaf {{leaf_active and 'is-active' or ''}}">
+                                                                <span class="dx-shop-nav-swatch"></span>
+                                                                <span class="dx-shop-mobile-leaf-label" t-esc="leaf_label"/>
+                                                            </a>
+                                                        </t>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="dx_shop_category_bar_hook" name="DX Shop Category Bar Hook" inherit_id="website_sale.products" priority="90">
+            <xpath expr="//t[@t-call='website_sale.filmstrip_categories']" position="replace">
+                <t t-if="opt_wsale_categories_top" t-call="digitalx_website.dx_shop_category_bar"/>
+            </xpath>
+        </template>
+
+        <template id="dx_shop_mobile_offcanvas_categories" name="DX Shop Mobile Offcanvas Categories" inherit_id="website_sale.o_wsale_offcanvas" priority="90">
+            <xpath expr="//div[@t-if='opt_wsale_categories'][.//t[@t-call='website_sale.products_categories_list']]" position="attributes">
+                <attribute name="t-if">opt_wsale_categories or opt_wsale_categories_top</attribute>
+            </xpath>
+        </template>
+
+        <record id="dx_shop_styles" model="ir.ui.view">
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+        <record id="dx_shop_category_bar" model="ir.ui.view">
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+        <record id="dx_shop_category_bar_hook" model="ir.ui.view">
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+        <record id="dx_shop_mobile_offcanvas_categories" model="ir.ui.view">
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+    </data>
+</odoo>

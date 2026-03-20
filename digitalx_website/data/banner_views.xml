@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_x_digitalx_home_banner_tree" model="ir.ui.view">
+            <field name="name">x_digitalx_home_banner.tree</field>
+            <field name="model">x_digitalx_home_banner</field>
+            <field name="arch" type="xml">
+                <list string="Homepage Banners" default_order="x_sequence, id">
+                    <field name="x_sequence" widget="handle"/>
+                    <field name="x_name"/>
+                    <field name="x_image" widget="image" options="{'size': [160, 80]}"/>
+                    <field name="x_badge"/>
+                    <field name="x_active"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_x_digitalx_home_banner_form" model="ir.ui.view">
+            <field name="name">x_digitalx_home_banner.form</field>
+            <field name="model">x_digitalx_home_banner</field>
+            <field name="arch" type="xml">
+                <form string="Homepage Banner">
+                    <sheet>
+                        <field name="x_image" widget="image" class="oe_avatar" options="{'preview_image': 'x_image'}"/>
+                        <div class="oe_title">
+                            <label for="x_name"/>
+                            <h1>
+                                <field name="x_name" placeholder="Banner name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="x_sequence"/>
+                                <field name="x_active"/>
+                                <field name="x_hide_overlay"/>
+                                <field name="x_badge" placeholder="Banner badge"/>
+                            </group>
+                            <group>
+                                <field name="x_primary_label" placeholder="Primary button label"/>
+                                <field name="x_primary_url" placeholder="/shop"/>
+                                <field name="x_secondary_label" placeholder="Secondary button label"/>
+                                <field name="x_secondary_url" placeholder="/contactus"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="x_title" placeholder="Main title"/>
+                            <field name="x_title_accent" placeholder="Accent title"/>
+                            <field name="x_description" placeholder="Banner description"/>
+                        </group>
+                        <group string="Text Colors">
+                            <group>
+                                <field name="x_badge_color" widget="dx_color_value" placeholder="#00BCD4"/>
+                                <field name="x_title_color" widget="dx_color_value" placeholder="#FFFFFF"/>
+                            </group>
+                            <group>
+                                <field name="x_title_accent_color" widget="dx_color_value" placeholder="#00BCD4"/>
+                                <field name="x_description_color" widget="dx_color_value" placeholder="rgba(255,255,255,0.8)"/>
+                            </group>
+                        </group>
+                        <group string="Font Sizes">
+                            <group>
+                                <field name="x_badge_font_size"/>
+                                <field name="x_title_font_size"/>
+                            </group>
+                            <group>
+                                <field name="x_title_accent_font_size"/>
+                                <field name="x_description_font_size"/>
+                            </group>
+                        </group>
+                        <group string="Button Colors">
+                            <group>
+                                <field name="x_primary_btn_bg_color" widget="dx_color_value" placeholder="linear-gradient(135deg, #00BCD4, #0097A7)"/>
+                                <field name="x_primary_btn_text_color" widget="dx_color_value" placeholder="#FFFFFF"/>
+                            </group>
+                            <group>
+                                <field name="x_secondary_btn_bg_color" widget="dx_color_value" placeholder="rgba(255,255,255,0.08)"/>
+                                <field name="x_secondary_btn_text_color" widget="dx_color_value" placeholder="#FFFFFF"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_x_digitalx_home_banner" model="ir.actions.act_window">
+            <field name="name">Homepage Banners</field>
+            <field name="res_model">x_digitalx_home_banner</field>
+            <field name="view_mode">list,form</field>
+            <field name="context" eval="{'default_x_active': True}"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a homepage banner
+                </p>
+                <p>
+                    Add, sort, activate, and replace the homepage hero slides from one screen.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_x_digitalx_home_banner_tree_view" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="view_x_digitalx_home_banner_tree"/>
+            <field name="act_window_id" ref="action_x_digitalx_home_banner"/>
+        </record>
+
+        <record id="action_x_digitalx_home_banner_form_view" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_x_digitalx_home_banner_form"/>
+            <field name="act_window_id" ref="action_x_digitalx_home_banner"/>
+        </record>
+
+        <menuitem
+            id="menu_x_digitalx_home_banner"
+            name="Homepage Banners"
+            parent="website.menu_website_global_configuration"
+            action="action_x_digitalx_home_banner"
+            groups="base.group_system"
+            sequence="30"/>
+    </data>
+</odoo>

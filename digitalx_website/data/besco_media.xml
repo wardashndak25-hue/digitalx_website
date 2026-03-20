@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="dx_besco_video_hero_horizontal" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">besco_hero_horizontal.mp4</field>
+            <field name="type">url</field>
+            <field name="url">https://besco.eu/modules/ps_imageslider/images/1da42ee9f875dbe330a93e139b63315ff4e09b00_30-poziom_comprs.mp4</field>
+        </record>
+        <record id="dx_besco_video_hero_vertical" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">besco_hero_vertical.mp4</field>
+            <field name="type">url</field>
+            <field name="url">https://besco.eu/modules/ps_imageslider/images/ea499fb843d3e95a250bfa3cee840190f0d2f638_30-pion_comprs.mp4</field>
+        </record>
+
+        <record id="dx_besco_catalog_cover_kabiny" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">besco_kabiny_2026_cover.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/catalog-covers/besco-kabiny-2026.jpg</field>
+        </record>
+        <record id="dx_besco_catalog_cover_cerabe" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">cerabe_2025_cover.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/catalog-covers/cerabe-2025.jpg</field>
+        </record>
+        <record id="dx_besco_catalog_cover_mini" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">mini_katalog_2025_cover.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/digitalx_website/static/src/img/besco/catalog-covers/mini-katalog-2025.jpg</field>
+        </record>
+
+        <record id="dx_besco_catalog_pdf_kabiny" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">besco_kabiny_2026.pdf</field>
+            <field name="type">url</field>
+            <field name="url">https://besco.eu/img/cms/Katalogi/Besco_Kabiny_2026.pdf</field>
+        </record>
+        <record id="dx_besco_catalog_pdf_cerabe" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">cerabe_2025.pdf</field>
+            <field name="type">url</field>
+            <field name="url">https://besco.eu/img/cms/Katalogi/Katalog%20CeraBe%2025.pdf</field>
+        </record>
+        <record id="dx_besco_catalog_pdf_mini" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">mini_katalog_2025.pdf</field>
+            <field name="type">url</field>
+            <field name="url">https://besco.eu/img/cms/Katalogi/Mini%20katalog%2025.pdf</field>
+        </record>
+    </data>
+</odoo>

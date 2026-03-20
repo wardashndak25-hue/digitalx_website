@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="dx_shop_nav_accessories" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Washbasins</field>
+            <field name="x_sequence">10</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_accent_color">#B88949</field>
+        </record>
+        <record id="dx_shop_nav_accessories_access_control_accessories" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Countertop washbasins</field>
+            <field name="x_sequence">10</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_accessories"/>
+            <field name="x_description">Statement basins with refined silhouettes and premium finishes.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/basin-gold.webp"/>
+            <field name="x_accent_color">#B88949</field>
+        </record>
+        <record id="dx_shop_nav_accessories_video_intercom_accessories" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Freestanding washbasin</field>
+            <field name="x_sequence">20</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_accessories"/>
+            <field name="x_description">Sculptural pieces designed to anchor the room visually.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/basin-lifestyle.webp"/>
+            <field name="x_accent_color">#B88949</field>
+        </record>
+
+        <record id="dx_shop_nav_networking" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Faucets</field>
+            <field name="x_sequence">20</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_accent_color">#A6783E</field>
+        </record>
+        <record id="dx_shop_nav_networking_soho" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Tall washbasin taps</field>
+            <field name="x_sequence">10</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_networking"/>
+            <field name="x_description">Elegant basin taps with a calm architectural profile.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/bathtub-faucet-gold.webp"/>
+            <field name="x_accent_color">#A6783E</field>
+        </record>
+        <record id="dx_shop_nav_networking_wireless_bridges" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Freestanding Bathtub Faucets</field>
+            <field name="x_sequence">20</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_networking"/>
+            <field name="x_description">Floor-mounted statements for premium bath spaces.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/bathtub-faucet-gold.webp"/>
+            <field name="x_accent_color">#A6783E</field>
+        </record>
+        <record id="dx_shop_nav_networking_routing" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Basin mixers</field>
+            <field name="x_sequence">30</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_networking"/>
+            <field name="x_description">Balanced fittings that support everyday luxury.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/faucet-lifestyle.webp"/>
+            <field name="x_accent_color">#A6783E</field>
+        </record>
+        <record id="dx_shop_nav_networking_wlan" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Shower fittings</field>
+            <field name="x_sequence">40</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_networking"/>
+            <field name="x_description">Coordinated fittings for modern shower zones.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/faucet-lifestyle.webp"/>
+            <field name="x_accent_color">#A6783E</field>
+        </record>
+        <record id="dx_shop_nav_networking_accessories" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Light gold finishes</field>
+            <field name="x_sequence">50</field>
+            <field name="x_active" eval="False"/>
+            <field name="x_parent_id" ref="dx_shop_nav_networking"/>
+            <field name="x_accent_color">#A6783E</field>
+        </record>
+        <record id="dx_shop_nav_networking_switches" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Gun metal finishes</field>
+            <field name="x_sequence">60</field>
+            <field name="x_active" eval="False"/>
+            <field name="x_parent_id" ref="dx_shop_nav_networking"/>
+            <field name="x_accent_color">#A6783E</field>
+        </record>
+
+        <record id="dx_shop_nav_cameras" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Shower Trays</field>
+            <field name="x_sequence">30</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_accent_color">#8F6834</field>
+        </record>
+        <record id="dx_shop_nav_cameras_turbo_hd" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Square Shower Tray</field>
+            <field name="x_sequence">10</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_cameras"/>
+            <field name="x_description">Compact, minimal foundations for shower layouts.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/tray-white.webp"/>
+            <field name="x_accent_color">#8F6834</field>
+        </record>
+        <record id="dx_shop_nav_cameras_ptz" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Rectangular Shower Tray</field>
+            <field name="x_sequence">20</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_cameras"/>
+            <field name="x_description">Marble-inspired trays with a clean architectural finish.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/tray-white.webp"/>
+            <field name="x_accent_color">#8F6834</field>
+        </record>
+        <record id="dx_shop_nav_cameras_network" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Semicircular Shower Trays</field>
+            <field name="x_sequence">30</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_cameras"/>
+            <field name="x_description">Soft geometry for compact and contemporary bathrooms.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/tray-white.webp"/>
+            <field name="x_accent_color">#8F6834</field>
+        </record>
+
+        <record id="dx_shop_nav_alarm" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Shower Enclosures</field>
+            <field name="x_sequence">40</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_accent_color">#6E5230</field>
+        </record>
+        <record id="dx_shop_nav_alarm_wireless" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Walk In Cabin</field>
+            <field name="x_sequence">10</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_alarm"/>
+            <field name="x_description">Open, airy screens for contemporary walk-in spaces.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/cabin-gold.webp"/>
+            <field name="x_accent_color">#6E5230</field>
+        </record>
+        <record id="dx_shop_nav_alarm_intrusion_accessory" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Square Cabin</field>
+            <field name="x_sequence">20</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_alarm"/>
+            <field name="x_description">Defined enclosures with strong edges and clear detailing.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/cabin-gold.webp"/>
+            <field name="x_accent_color">#6E5230</field>
+        </record>
+        <record id="dx_shop_nav_alarm_wired" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Sliding Doors</field>
+            <field name="x_sequence">30</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_alarm"/>
+            <field name="x_description">Smooth entry systems for practical, elegant shower spaces.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/bathscreen-lifestyle.webp"/>
+            <field name="x_accent_color">#6E5230</field>
+        </record>
+
+        <record id="dx_shop_nav_access_control" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Bathtubs</field>
+            <field name="x_sequence">50</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_accent_color">#7C5C38</field>
+        </record>
+        <record id="dx_shop_nav_access_control_electrical_locks" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Rectangular Bathtubs</field>
+            <field name="x_sequence">10</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_access_control"/>
+            <field name="x_description">Clean-lined baths designed for everyday comfort.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/bathtub-rect.webp"/>
+            <field name="x_accent_color">#7C5C38</field>
+        </record>
+        <record id="dx_shop_nav_access_control_face_recognition" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Freestanding Bathtubs</field>
+            <field name="x_sequence">20</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_access_control"/>
+            <field name="x_description">Hero pieces that define a premium bathroom layout.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/basin-lifestyle.webp"/>
+            <field name="x_accent_color">#7C5C38</field>
+        </record>
+        <record id="dx_shop_nav_access_control_readers" model="x_digitalx_shop_nav_item">
+            <field name="x_name">White Bathtubs</field>
+            <field name="x_sequence">30</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_access_control"/>
+            <field name="x_description">Bright, versatile baths suited to timeless interiors.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/bathtub-rect.webp"/>
+            <field name="x_accent_color">#7C5C38</field>
+        </record>
+        <record id="dx_shop_nav_access_control_fingerprint" model="x_digitalx_shop_nav_item">
+            <field name="x_name">ResiCast Bathtubs</field>
+            <field name="x_sequence">40</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_access_control"/>
+            <field name="x_description">Performance-focused tubs built for lasting comfort.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/bathtub-rect.webp"/>
+            <field name="x_accent_color">#7C5C38</field>
+        </record>
+        <record id="dx_shop_nav_access_control_kits" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Grooved bathtubs</field>
+            <field name="x_sequence">50</field>
+            <field name="x_active" eval="False"/>
+            <field name="x_parent_id" ref="dx_shop_nav_access_control"/>
+            <field name="x_accent_color">#7C5C38</field>
+        </record>
+        <record id="dx_shop_nav_access_control_controllers" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Bath accessories</field>
+            <field name="x_sequence">60</field>
+            <field name="x_active" eval="False"/>
+            <field name="x_parent_id" ref="dx_shop_nav_access_control"/>
+            <field name="x_accent_color">#7C5C38</field>
+        </record>
+        <record id="dx_shop_nav_access_control_card_terminals" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Project supply</field>
+            <field name="x_sequence">70</field>
+            <field name="x_active" eval="False"/>
+            <field name="x_parent_id" ref="dx_shop_nav_access_control"/>
+            <field name="x_accent_color">#7C5C38</field>
+        </record>
+
+        <record id="dx_shop_nav_video_intercom" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Bathtub Screens</field>
+            <field name="x_sequence">60</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_accent_color">#8C6A43</field>
+        </record>
+        <record id="dx_shop_nav_video_intercom_4_wire" model="x_digitalx_shop_nav_item">
+            <field name="x_name">2-leaf bathtub screens</field>
+            <field name="x_sequence">10</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_video_intercom"/>
+            <field name="x_description">Flexible screen systems with clean framing details.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/bathscreen-lifestyle.webp"/>
+            <field name="x_accent_color">#8C6A43</field>
+        </record>
+        <record id="dx_shop_nav_video_intercom_kits" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Framed bath screens</field>
+            <field name="x_sequence">20</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_video_intercom"/>
+            <field name="x_description">Defined profiles for a strong architectural finish.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/bathscreen-lifestyle.webp"/>
+            <field name="x_accent_color">#8C6A43</field>
+        </record>
+        <record id="dx_shop_nav_video_intercom_ip_series" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Minimal bath screens</field>
+            <field name="x_sequence">30</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_video_intercom"/>
+            <field name="x_description">Low-visual-noise panels for calm, open layouts.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/bathscreen-lifestyle.webp"/>
+            <field name="x_accent_color">#8C6A43</field>
+        </record>
+        <record id="dx_shop_nav_video_intercom_sip_server" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Project details</field>
+            <field name="x_sequence">40</field>
+            <field name="x_active" eval="False"/>
+            <field name="x_parent_id" ref="dx_shop_nav_video_intercom"/>
+            <field name="x_accent_color">#8C6A43</field>
+        </record>
+        <record id="dx_shop_nav_video_intercom_sip_phone" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Consultation</field>
+            <field name="x_sequence">50</field>
+            <field name="x_active" eval="False"/>
+            <field name="x_parent_id" ref="dx_shop_nav_video_intercom"/>
+            <field name="x_accent_color">#8C6A43</field>
+        </record>
+        <record id="dx_shop_nav_video_intercom_2_wire" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Entry-level bath screens</field>
+            <field name="x_sequence">60</field>
+            <field name="x_active" eval="False"/>
+            <field name="x_parent_id" ref="dx_shop_nav_video_intercom"/>
+            <field name="x_accent_color">#8C6A43</field>
+        </record>
+
+        <record id="dx_shop_nav_backend" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Shower Doors</field>
+            <field name="x_sequence">70</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_accent_color">#70543A</field>
+        </record>
+        <record id="dx_shop_nav_backend_nvr" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Sliding Doors</field>
+            <field name="x_sequence">10</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_backend"/>
+            <field name="x_description">Smooth-operation doors for refined shower enclosures.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/cabin-gold.webp"/>
+            <field name="x_accent_color">#70543A</field>
+        </record>
+        <record id="dx_shop_nav_backend_kit" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Swing doors / inward and outward</field>
+            <field name="x_sequence">20</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_backend"/>
+            <field name="x_description">Flexible openings for projects that need more freedom of movement.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/cabin-gold.webp"/>
+            <field name="x_accent_color">#70543A</field>
+        </record>
+        <record id="dx_shop_nav_backend_dvr" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Framed shower doors</field>
+            <field name="x_sequence">30</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_backend"/>
+            <field name="x_description">Defined, durable profiles for premium installations.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/cabin-gold.webp"/>
+            <field name="x_accent_color">#70543A</field>
+        </record>
+
+        <record id="dx_shop_nav_display_control" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Design Service</field>
+            <field name="x_sequence">80</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_accent_color">#9D7442</field>
+        </record>
+        <record id="dx_shop_nav_display_control_accessories" model="x_digitalx_shop_nav_item">
+            <field name="x_name">Consultation &amp; specification</field>
+            <field name="x_sequence">10</field>
+            <field name="x_active" eval="True"/>
+            <field name="x_parent_id" ref="dx_shop_nav_display_control"/>
+            <field name="x_description">Support for homeowners, installers, and trade projects selecting the right bathroom products.</field>
+            <field name="x_image" type="base64" file="digitalx_website/static/src/img/craikcomfort/logo.webp"/>
+            <field name="x_accent_color">#9D7442</field>
+        </record>
+    </data>
+</odoo>
