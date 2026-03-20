@@ -1,0 +1,133 @@
+Section Two — English Version
+1) Project Introduction
+This document combines the full brand identity and the website build direction for Craik & Comfort Bathroom Design into one detailed reference file. It is meant to guide the developer and design team with a clear implementation brief covering positioning, website structure, product scope, trust pages, visual direction, reference websites, and execution priorities.This document combines the full brand identity and the website build direction for Craik & Comfort Bathroom Design into one detailed reference file. It is meant to guide the developer and design team with a clear implementation brief covering positioning, website structure, product scope, trust pages, visual direction, reference websites, and execution priorities.
+2) Main Goal
+The website must present the business as a Bathroom Design + Bathroom Products + Trade Supply brand, not as a simple catalogue. The core focus is on trust, clear market positioning, better user experience, stronger product presentation, and better conversion into enquiries or sales.The website must present the business as a Bathroom Design + Bathroom Products + Trade Supply brand, not as a simple catalogue. The core focus is on trust, clear market positioning, better user experience, stronger product presentation, and better conversion into enquiries or sales.
+3) Brand Core
+Craik & Comfort should feel like a premium bathroom brand built around luxury, comfort, visual cleanliness, trust, and an elegant European atmosphere. The brand should communicate showroom quality rather than generic online retail.Craik & Comfort should feel like a premium bathroom brand built around luxury, comfort, visual cleanliness, trust, and an elegant European atmosphere. The brand should communicate showroom quality rather than generic online retail.
+4) Brand Personality
+• Elegant
+• Calm
+• Trustworthy
+• Modern
+• Organized
+• Premium without excess
+Overall mood: Luxury + Comfort + Clean Design.Overall mood: Luxury + Comfort + Clean Design.
+5) Identity Concept
+• The bath and shower in the logo clearly communicate bathroom specialization.
+• Gold communicates quality and luxury.
+• The dark background communicates strength, seriousness, and professionalism.
+The right visual direction is therefore: Minimal, Elegant, Premium, Warm.The right visual direction is therefore: Minimal, Elegant, Premium, Warm.
+6) Core Color Palette
+Color	Name	Hex	Usage
+Black	Luxury Black	#111111	Primary dark backgrounds, header, footer, formal headings.
+Gold	Signature Gold	#C08E52	Logo, accents, secondary buttons, icons, premium highlights.
+Dark Gold	Deep Gold	#A9783E	Hover states, borders, secondary accents.
+Soft Gold	Soft Gold	#D9B07A	Soft accents and light decorative surfaces.
+Warm Ivory	Warm Ivory	#F7F3EE	Main content backgrounds and product pages.
+Stone Gray	Soft Stone Gray	#7B746C	Secondary text and supporting information.
+
+Recommended color ratio across the website: 80% clarity and light surfaces, 15% black, 5% gold. This preserves a premium feel without making the site visually heavy.Recommended color ratio across the website: 80% clarity and light surfaces, 15% black, 5% gold. This preserves a premium feel without making the site visually heavy.
+7) Typography
+• Headings: Playfair Display or Cormorant Garamond.
+• Body copy: Inter, Montserrat, or Open Sans.
+• Preferred combination: Playfair Display for headings and Inter for body text.
+8) Logo Use
+• Primary version: gold logo on a black background.
+• Secondary version: black or gold logo on a light background.
+• Do not place the logo on busy backgrounds, distort it, recolor it randomly, or add excessive effects.
+9) Image and Icon Style
+Photography should be clean, softly lit, premium, modern, and material-focused, showing finishes such as marble, matte black, brushed gold, white ceramic, and modern shower glass. The website should also be ready to display future project images, before / after comparisons, close-up detail shots, and lifestyle visuals.Photography should be clean, softly lit, premium, modern, and material-focused, showing finishes such as marble, matte black, brushed gold, white ceramic, and modern shower glass. The website should also be ready to display future project images, before / after comparisons, close-up detail shots, and lifestyle visuals.
+• Icons should be simple, thin, and minimal.
+• Use black or gold only.
+• Examples: Delivery, Warranty, Installation, Support, Trade, Premium Quality.
+10) Main Website Structure
+The website must contain 3 clear main sections, visible in the navigation and on the homepage:The website must contain 3 clear main sections, visible in the navigation and on the homepage:
+• Projects
+• Shop
+• Supplier
+11) Projects Section
+• Create a dedicated, professional Projects section.
+• Prepare it for before / after content later.
+• Include 3 clear packages.
+• Include a clear call to action for consultation or enquiry.
+12) Shop Section
+The shop must be reorganized and redesigned from the ground up so it feels cleaner, more premium, better structured, and more suitable for modern bathroom products.The shop must be reorganized and redesigned from the ground up so it feels cleaner, more premium, better structured, and more suitable for modern bathroom products.
+13) First-Phase Product Scope
+• Veo taps
+• Illusion
+• Decco
+• Aspira
+Shower trays are already partly added. The current product change required is to remove Alpina shower tray and keep only Vexo slim shower trays in white, black, marble white, and marble black.Shower trays are already partly added. The current product change required is to remove Alpina shower tray and keep only Vexo slim shower trays in white, black, marble white, and marble black.
+14) Product Data Sources
+• Official product source
+• Current database
+• Any catalogues or files provided later
+Each product should be structured properly with name, image set, specifications, category, price, and concise sales-ready description.Each product should be structured properly with name, image set, specifications, category, price, and concise sales-ready description.
+15) Design Direction and Reference Websites
+The site should not be a direct copy of any reference website, but it should take inspiration from the following official sources:The site should not be a direct copy of any reference website, but it should take inspiration from the following official sources:
+Reference	Link	Why it matters
+Grohe	https://www.grohe.com/
+Reference for premium presentation, modern structure, and polished product display.
+Sonas	https://www.sonasbathrooms.com/
+Reference for commercial clarity and trust suitable for the Irish market.
+Besco	https://besco.eu/
+Reference for product source, categories, and official materials.
+Craik & Comfort current site	https://www.craikcomfort.ie/
+Reference for current content and database assets that can still be reused.
+
+Target design formula: Grohe luxury + Sonas clarity + Irish trust + Besco product strength.Target design formula: Grohe luxury + Sonas clarity + Irish trust + Besco product strength.
+16) Homepage Direction
+• A strong and clear hero section.
+• Direct access to the 3 main sections.
+• Featured categories or featured products.
+• Trust-building value points.
+• Clear calls to action such as Shop Bathroom Products and Trade / B2B Enquiry.
+• A clean, uncluttered layout.
+17) Core Trust Pages
+• About
+• Why Us / Why Buy From Us
+• Trade / B2B
+• Delivery & Lead Times
+• Returns & Refunds
+• Warranty
+• Installation Guidance
+• Contact Us
+The Help / Support page should also be improved so it functions as a useful support hub rather than only a ticket form.The Help / Support page should also be improved so it functions as a useful support hub rather than only a ticket form.
+18) Company Information and Social Media
+• Show the business name clearly.
+• Show contact details, address, and any relevant legal or trade details available.
+• Connect the website properly to Facebook, Instagram, TikTok, and YouTube.
+• Remove all social placeholders or unfinished setup messages.
+19) Items That Must Be Removed or Fixed
+• placeholder text
+• fake names or fake team members
+• broken blocks
+• unconfigured dynamic snippets
+• spelling issues
+• unintended zero prices
+• any element that makes the website look unfinished
+20) UI Direction
+• Generous white space.
+• Ordered cards with room to breathe.
+• Large, high-quality imagery.
+• Minimal but strong text.
+• Primary black buttons with white text.
+• Secondary outlined gold buttons with gold text.
+• A premium showroom feel throughout.
+21) Tone of Voice
+The written tone should be clear, elegant, concise, and confident. It should avoid over-selling, slang, and unnecessary technical complexity. Suitable brand words include: Premium, Elegant, Crafted, Comfort, Designed, Quality, Modern, Trusted, Direct Support, Bathroom Solutions.The written tone should be clear, elegant, concise, and confident. It should avoid over-selling, slang, and unnecessary technical complexity. Suitable brand words include: Premium, Elegant, Crafted, Comfort, Designed, Quality, Modern, Trusted, Direct Support, Bathroom Solutions.
+22) Suggested Brand Message
+• Premium Bathroom Design and Products for Modern Living
+• Elegant Bathroom Solutions with Comfort and Style
+23) Implementation Priorities
+• Build the full website structure and the 3 main sections.
+• Rebuild the homepage first.
+• Organize the shop and first-phase products.
+• Create the core trust pages and support content.
+• Connect social media and remove all temporary or broken elements.
+• Apply one consistent visual identity across buttons, cards, icons, and page sections.
+24) Final Expected Result
+The final website should feel premium, trustworthy, clean, commercially credible, suitable for the Irish market, and ready to scale later without a full rebuild.The final website should feel premium, trustworthy, clean, commercially credible, suitable for the Irish market, and ready to scale later without a full rebuild.
+
+Prepared as a unified design and implementation brief for Craik & Comfort Bathroom Design.
